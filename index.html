@@ -6,20 +6,19 @@
     <title>Landing-Page</title>
     <link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
-    <header class="header-landing">
+    <header class="header-landing position-sticky top-0 bg-white z-3">
         <nav class="navbar pb-0">
             <div class="container px-0">
                 <div class="w-100 d-flex justify-content-between">
                     <a class="navbar-brand" href="#">Tos Trip</a>
                     <div class="wrapper-button d-flex align-items-center gap-3">
                         <a href="#" class="btn btn-support">Support</a>
-                        <a href="#" class="btn rounded-1 py-1 px-4 btn-signIn">
-                            Sign In
-                        </a>
+                        <a href="#" class="btn rounded-1 py-1 px-4 btn-signIn">Sign In</a>
                     </div>
                 </div>
                 <hr class="w-100 mt-2 mb-0">
@@ -136,16 +135,19 @@
     </header>
 
     <main>
-        <section class="hero-banner" style="background-image: url(img/hero.jpg);">
+        <section class="hero-banner overflow-hidden" style="background-image: url(img/hero.jpg);">
             <div class="container-fluid">
                 <div class="container">
                     <div class="text w-75">
-                        <h1 class="fw-bold mb-4">TOS TRIP</h1>
-                        <p class="mb-0 w-75">
+                        <h1 class="fw-bold mb-4
+                        animate__animated animate__fadeIn animate__slow animate__delay-1s">TOS TRIP</h1>
+                        <p class="mb-0 w-75 
+                        animate__animated animate__fadeIn animate__slow animate__delay-1s">
                             Discover incredible destinations, book your dream trip, and embark on unforgettable adventures. Let TOS TRIP be your guide to exploring new cultures, scenic landscapes, and hidden gems across the globe. Start your journey today!
                         </p>
                     </div>
-                    <form action="" class="search shadow overflow-hidden w-100 rounded-3">
+                    <form action="" class="search shadow overflow-hidden w-100 rounded-3 
+                    animate__animated animate__fadeIn animate__slow animate__delay-1s">
                         <ul class="nav mb-1">
                             <li class="nav-item d-flex align-items-center">
                                 <i class="fa-solid fa-plane-departure"></i>
@@ -209,8 +211,267 @@
                 </div>
             </div>
         </section>
+        <section class="sub-menu overflow-hidden">
+            <div class="container animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                <div class="overflow-hidden">
+                    <ul class="nav overflow-auto">
+                        <li class="nav-item">
+                            <a class="nav-link ms-0" href="#">
+                                Hotel
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Apartments
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Villas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Resorts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Guesthouses
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Boutique
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Bungalows
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Hostels
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Luxury Stays
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Homestays
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Serviced Apartments
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="mt-0">
+            </div>
+        </section>
+        <section class="offers overflow-hidden py-5">
+            <div class="container">
+                <div class="title-section mb-4 animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                    <h2>Exclusive Offers Just for You</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-6">
+                        <div class="position-relative animate__animated wow animate__fadeInLeft animate__slow">
+                            <img src="img/offers/offer1.png" class="img-fluid rounded-1" alt="">
+                            <div class="overlay d-flex flex-column justify-content-end rounded-1 position-absolute p-4">
+                                <p class="w-75 mb-0 text-white-50">
+                                    Discover exclusive offers at our partner hotels across Siem Reap and enjoy the best stays at unbeatable prices
+                                </p>
+                                <h1 class="text-white">30<span class="fw-normal">%</span></h1>
+                                <div>
+                                    <button class="btn primary-button py-1 rounded-1">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="position-relative animate__animated wow animate__fadeInRight animate__slow">
+                            <img src="img/offers/offer2.png" class="img-fluid rounded-1" alt="">
+                            <div class="overlay d-flex flex-column justify-content-end rounded-1 position-absolute p-4">
+                                <p class="w-75 mb-0 text-white-50">
+                                    Discover exclusive offers at our partner hotels across Koh Kong and enjoy the best stays at unbeatable prices
+                                </p>
+                                <h1 class="text-white">30<span class="fw-normal">%</span></h1>
+                                <div>
+                                    <button class="btn primary-button py-1 rounded-1">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="popular overflow-hidden py-5">
+            <div class="container">
+                <div class="title-section mb-4 animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                    <h2>Popular Hotels</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-4">
+                        <div class="card border-0 animate__animated wow animate__fadeInUp animate__slow">
+                            <a class="stretched-link" href=""></a>
+                            <div class="overflow-hidden rounded-1">
+                                <img src="img/popular/popular1.jpg" class="img-fluid" alt="Harmony Phnom Penh Hotel">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Harmony Phnom Penh Hotel</h5>
+                                <div class="d-flex align-items-end">
+                                    <span class="small me-3">
+                                        <i class="fa-solid fa-location-dot me-2"></i>Daun Penh, Phnom Penh
+                                    </span>
+                                    <span class="rating small bg-primary px-2 rounded-2 text-light">
+                                        <i class="fa-solid fa-star me-1 text-warning"></i>8/10
+                                    </span>
+                                </div>
+                                <div class="price">
+                                    <span class="small text-secondary me-1">From</span>
+                                    <span class="fs-4 fw-medium">$100</span>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card border-0 animate__animated wow animate__fadeInUp animate__slow">
+                            <a class="stretched-link" href=""></a>
+                            <div class="overflow-hidden rounded-1">
+                                <img src="img/popular/popular3.jpg" class="img-fluid" alt="The Peninsula Phnom Penh">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">The Peninsula Phnom Penh</h5>
+                                <div class="d-flex align-items-end">
+                                    <span class="small me-3">
+                                        <i class="fa-solid fa-location-dot me-2"></i>Chroy Changvar, Phnom Penh
+                                    </span>
+                                    <span class="rating small bg-primary px-2 rounded-2 text-light">
+                                        <i class="fa-solid fa-star me-1 text-warning"></i>9/10
+                                    </span>
+                                </div>
+                                <div class="price">
+                                    <span class="small text-secondary me-1">From</span>
+                                    <span class="fs-4 fw-medium">$100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card border-0 animate__animated wow animate__fadeInUp animate__slow">
+                            <a class="stretched-link" href=""></a>
+                            <div class="overflow-hidden">
+                                <img src="img/popular/popular2.jpg" class="img-fluid" alt="Ohana Phnom Penh Palace Hotel">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Ohana Phnom Penh Palace Hotel</h5>
+                                <div class="d-flex align-items-end">
+                                    <span class="small me-3">
+                                        <i class="fa-solid fa-location-dot me-2"></i>Daun Penh, Phnom Penh
+                                    </span>
+                                    <span class="rating small bg-primary px-2 rounded-2 text-light">
+                                        <i class="fa-solid fa-star me-1 text-warning"></i>7/10
+                                    </span>
+                                </div>
+                                <div class="price">
+                                    <span class="small text-secondary me-1">From</span>
+                                    <span class="fs-4 fw-medium">$100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card border-0 animate__animated wow animate__fadeInUp animate__slow">
+                            <a class="stretched-link" href=""></a>
+                            <div class="overflow-hidden rounded-1">
+                                <img src="img/popular/popular4.jpg" class="img-fluid" alt="Citadines Flatiron Phnom Penh">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Citadines Flatiron Phnom Penh</h5>
+                                <div class="d-flex align-items-end">
+                                    <span class="small me-3">
+                                        <i class="fa-solid fa-location-dot me-2"></i>Daun Penh, Phnom Penh
+                                    </span>
+                                    <span class="rating small bg-primary px-2 rounded-2 text-light">
+                                        <i class="fa-solid fa-star me-1 text-warning"></i>8/10
+                                    </span>
+                                </div>
+                                <div class="price">
+                                    <span class="small text-secondary me-1">From</span>
+                                    <span class="fs-4 fw-medium">$100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card border-0 animate__animated wow animate__fadeInUp animate__slow">
+                            <a class="stretched-link" href=""></a>
+                            <div class="overflow-hidden rounded-1">
+                                <img src="img/popular/popular5.jpg" class="img-fluid" alt="G Mekong Hotel Phom Penh">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">G Mekong Hotel Phom Penh</h5>
+                                <div class="d-flex align-items-end">
+                                    <span class="small me-3">
+                                        <i class="fa-solid fa-location-dot me-2"></i>Daun Penh, Phnom Penh
+                                    </span>
+                                    <span class="rating small bg-primary px-2 rounded-2 text-light">
+                                        <i class="fa-solid fa-star me-1 text-warning"></i>8/10
+                                    </span>
+                                </div>
+                                <div class="price">
+                                    <span class="small text-secondary me-1">From</span>
+                                    <span class="fs-4 fw-medium">$100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card border-0 animate__animated wow animate__fadeInUp animate__slow">
+                            <a class="stretched-link" href=""></a>
+                            <div class="overflow-hidden rounded-1">
+                                <img src="img/popular/popular6.jpg" class="img-fluid" alt="Chaiya Palace Hotel">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Chaiya Palace Hotel</h5>
+                                <div class="d-flex align-items-end">
+                                    <span class="small me-3">
+                                        <i class="fa-solid fa-location-dot me-2"></i>Daun Penh, Phnom Penh
+                                    </span>
+                                    <span class="rating small bg-primary px-2 rounded-2 text-light">
+                                        <i class="fa-solid fa-star me-1 text-warning"></i>9/10
+                                    </span>
+                                </div>
+                                <div class="price">
+                                    <span class="small text-secondary me-1">From</span>
+                                    <span class="fs-4 fw-medium">$100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="trending overflow-hidden py-5">
+            <div class="container">
+                <div class="title-section mb-4 animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                    <h2>Top Trending Travel Destinations</h2>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>
