@@ -170,10 +170,13 @@
 .popular .card:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.popular .card img {
+.popular .card img,
+.trending .card img,
+.trending .card .overlay {
     transition: all 0.5s ease-in-out;
 }
-.popular .card:hover img {
+.popular .card:hover img,
+.trending .card:hover img {
     transform: scale(1.03);
 }
 .popular .card:hover .card-body h5 {
@@ -181,4 +184,27 @@
 }
 .popular .card .card-body .rating i {
     font-size: 13px;
+}
+
+/* ===== style for trending section ===== */
+.trending .card {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+.trending .card .overlay {
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: end;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.8072478991596639) 0%, rgba(255,255,255,0) 100%);
+    color: var(--main-color-2);
+}
+.trending .card:hover .overlay {
+    color: var(--text-white);
+}
+.trending .card .overlay h4{
+    opacity: 0.5;
+}
+.trending .card:hover .overlay h4 {
+    opacity: 1;
 }
