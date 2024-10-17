@@ -147,7 +147,6 @@
 .sub-menu .nav .nav-item .nav-link:hover::after{
     transform: scaleX(1);
 }
-
 /* ===== style for offers section ===== */
 .offers .overlay {
     width: 100%;
@@ -157,23 +156,21 @@
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.721) 0%, rgba(255,255,255,0) 100%);
 }
-
 /* ===== style for populars section ===== */
 .popular .card,
 .popular .card .card-body h5 {
     transition: all 0.3s ease-in-out;
 }
-
 .popular .card {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 .popular .card:hover {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 .popular .card img,
 .trending .card img,
 .trending .card .overlay {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 .popular .card:hover img,
 .trending .card:hover img {
@@ -185,7 +182,6 @@
 .popular .card .card-body .rating i {
     font-size: 13px;
 }
-
 /* ===== style for trending section ===== */
 .trending .card {
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
@@ -209,25 +205,41 @@
     opacity: 1;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+   background-color: var(--main-color-2);
+   width: 35px;
+   height: 35px;
+   transition: all 0.3s ease-in-out;
+   opacity: 0.5;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    opacity: 1;
+    background-color: var(--main-color);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none;
+}
+
 /* ===== style for member section */
 .member {
     height: 420px;
 }
-
 .member .container {
     height: 100%;
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
 }
-
 .member .container .content {
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .member .container .content h2 {
     color: var(--text-white);
     opacity: 0.8;
@@ -237,8 +249,89 @@
     color: var(--text-white);
     border: 2px solid var(--main-color-2);
     transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
 }
 .member .container .content .btn-join:hover {
-    background-color: var(--main-color);
     border: 2px solid var(--main-color);
+}
+.member .container .content .btn-join::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    background-color: var(--main-color);
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+}
+.member .container .content .btn-join:hover::after {
+    transform: scaleX(1);
+}
+/* ===== style for footer ===== */
+.footer {
+    font-family: "Roboto Mono", monospace;
+    color: var(--sub-text);
+    background-color: #1a2651;
+}
+
+.footer .top-footer .social-icon {
+    width: 35px;
+    height: 35px;
+    margin: 7px 8px;
+    background-color: var(--main-color);
+    color: #1a2651;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+.footer .top-footer .social-icon:hover {
+    cursor: pointer;
+    background-color: transparent;
+    background-color: var(--main-color-2);
+}
+.footer .top-footer .social-icon::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    background-color: var(--main-color-2);
+    transition: all 0.2s ease-in-out;
+}
+.footer .top-footer .social-icon:hover::after {
+    top: 0;
+    left: 0;
+}
+.footer .top-footer .social-icon i {
+    position: absolute;
+    z-index: 3;
+}
+
+.footer .top-footer a {
+    color: var(--sub-text);
+    transition: all 0.2s ease-in;
+}
+.footer .top-footer a:hover {
+    color: var(--main-color-2);
+}
+
+.footer .bottom-footer {
+    background-color: #233c8562;
+}
+
+.footer .bottom-footer i {
+    /* font-size: 18px; */
+}
+.footer .bottom-footer h6 {
+    color: #ccc;
 }

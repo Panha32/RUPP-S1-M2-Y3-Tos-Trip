@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing-Page</title>
     <link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugin/swipper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -464,48 +465,68 @@
                 <div class="title-section mb-4 animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
                     <h2>Top Trending Travel Destinations</h2>
                 </div>
-                <div class="row g-4">
-                    <div class="col-3 animate__animated wow animate__fadeInUp">
-                        <div class="card border-0 rounded-1 overflow-hidden position-relative">
-                            <img src="img/trending/trending1.jpg" class="img-fluid" alt="">
-                            <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
-                                <h4>Royal Palace</h4>
+                <div class="swiper animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card border-0 rounded-1 overflow-hidden position-relative">
+                                <img src="img/trending/trending1.jpg" class="img-fluid" alt="">
+                                <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
+                                    <h4>Royal Palace</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card border-0 rounded-1 overflow-hidden position-relative">
+                                <img src="img/trending/trending3.jpg" class="img-fluid" alt="">
+                                <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
+                                    <h4>Angkor Wat Temple</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card border-0 rounded-1 overflow-hidden position-relative">
+                                <img src="img/trending/trending4.jpg" class="img-fluid" alt="">
+                                <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
+                                    <h4>Banteay Samre</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card border-0 rounded-1 overflow-hidden position-relative">
+                                <img src="img/trending/trending2.jpg" class="img-fluid" alt="">
+                                <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
+                                    <h4>Ta Prohm Temple</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card border-0 rounded-1 overflow-hidden position-relative">
+                                <img src="img/trending/trending2.jpg" class="img-fluid" alt="">
+                                <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
+                                    <h4>Ta Prohm Temple</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-3 animate__animated wow animate__fadeInUp animate__slow">
-                        <div class="card border-0 rounded-1 overflow-hidden position-relative">
-                            <img src="img/trending/trending3.jpg" class="img-fluid" alt="">
-                            <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
-                                <h4>Angkor Wat Temple</h4>
-                            </div>
+                    <div class="swpier-button-wrapper">
+                        <div class="swiper-button-next rounded-circle">
+                            <i class="fa-solid fa-chevron-right text-white"></i>
                         </div>
-                    </div>
-                    <div class="col-3 animate__animated wow animate__fadeInUp animate__slower">
-                        <div class="card border-0 rounded-1 overflow-hidden position-relative">
-                            <img src="img/trending/trending4.jpg" class="img-fluid" alt="">
-                            <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
-                                <h4>Banteay Samre</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 animate__animated wow animate__fadeInUp animate__delay-1s animate__slow">
-                        <div class="card border-0 rounded-1 overflow-hidden position-relative">
-                            <img src="img/trending/trending2.jpg" class="img-fluid" alt="">
-                            <div class="overlay position-absolute w-100 h-100 p-4 pb-3">
-                                <h4>Ta Prohm Temple</h4>
-                            </div>
+                        <div class="swiper-button-prev rounded-circle">
+                            <i class="fa-solid fa-chevron-left text-white"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="member py-5 overflow-hidden">
+        <section class="member py-5 overflow-hidden
+            animate__animated wow animate__fadeIn animate__slow">
             <div class="container px-0 rounded-4 overflow-hidden" style="background-image: url(img/image.png);">
                 <div class="content w-100 h-100">
                     <div class="d-flex flex-column align-items-center">
-                        <h2 class="text-center mb-4">Become a member today and enjoy <br> exclusive offers just for you!</h2>
-                        <div>
+                        <h2 class="text-center mb-4
+                        animate__animated wow animate__fadeInDown animate__slow">Become a member today and enjoy <br> exclusive offers just for you!</h2>
+                        <div class="animate__animated wow animate__fadeInUp animate__slow">
                             <button class="btn btn-join py-2 px-5">Join Now</button>
                         </div>
                     </div>
@@ -514,14 +535,106 @@
         </section>
     </main>
 
-    <footer class="footer">
-        
+    <footer class="footer mt-5">
+        <div class="top-footer py-5 d-flex flex-column align-items-center">
+            <h4 class="text-light">Tos Trip</h4>
+            <p class="text-center">Your trusted travel partner, offering the best stays<br> and exclusive deals across Cambodia.</p>
+            <ul class="list-group-flush d-flex">
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group-flush quick-link mt-3 d-flex gap-5">
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">About</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Flight</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Stay</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Car</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Terms of use</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Privancy and Policy</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom-footer py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-5">
+                    <div class="d-flex align-items-center gap-3">
+                        <div>
+                            <i class="fa-solid fa-mobile-screen fs-4"></i>
+                        </div>
+                        <div>
+                            <span>Have a question?</span>
+                            <h6 class="mb-0 mt-1">+855 762 160 141</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div>
+                            <i class="fa-regular fa-envelope fs-4"></i>
+                        </div>
+                        <div>
+                            <span>Have a question?</span>
+                            <h6 class="mb-0 mt-1">tostrip@tour.com</h6>
+                        </div>
+                    </div>
+                </div>
+                <div>&copy;2024,All Rights Reserved by 
+                    <a class="text-decoration-none" href="#">Tos Trip</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="plugin/swipper/swiper-bundle.min.js"></script>
     <script>
         new WOW().init();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var swiper = new Swiper(".swiper", {
+                slidesPerView: 4,
+                loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    1200: {
+                        spaceBetween: 24,
+                    },
+                },
+            });
+        });
     </script>
 </body>
 </html>
