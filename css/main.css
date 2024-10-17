@@ -93,7 +93,7 @@ header .navbar .navbar-nav::-webkit-scrollbar {
     top: 0;
     left: 0;
     transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .header-landing .navbar .navbar-nav .nav-item .nav-link:hover::after{
     transform: scaleX(1);

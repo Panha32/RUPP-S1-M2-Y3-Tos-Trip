@@ -142,7 +142,7 @@
     bottom: 0;
     left: 0;
     transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .sub-menu .nav .nav-item .nav-link:hover::after{
     transform: scaleX(1);
@@ -207,4 +207,38 @@
 }
 .trending .card:hover .overlay h4 {
     opacity: 1;
+}
+
+/* ===== style for member section */
+.member {
+    height: 420px;
+}
+
+.member .container {
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+.member .container .content {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member .container .content h2 {
+    color: var(--text-white);
+    opacity: 0.8;
+}
+
+.member .container .content .btn-join {
+    color: var(--text-white);
+    border: 2px solid var(--main-color-2);
+    transition: all 0.4s ease-in-out;
+}
+.member .container .content .btn-join:hover {
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
 }
