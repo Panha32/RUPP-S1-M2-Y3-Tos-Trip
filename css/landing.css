@@ -19,7 +19,6 @@
     color: var(--text-white);
     font-size: 80px;
     letter-spacing: 32px;
-    /*  */
     width: 13ch;
     animation: typing 2s steps(13), blink .5s step-end infinite alternate;
     white-space: nowrap;
@@ -327,10 +326,6 @@
 
 .footer .bottom-footer {
     background-color: #233c8562;
-}
-
-.footer .bottom-footer i {
-    /* font-size: 18px; */
 }
 .footer .bottom-footer h6 {
     color: #ccc;

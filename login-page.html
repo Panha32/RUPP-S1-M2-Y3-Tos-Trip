@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Page</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/tostrip-web.ico">
+    <link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="container-fluid p-3" style="background-image: url(img/login-bg.png);">
+        <div class="row h-100">
+            <div class="col-7">
+                <div class="h-100 p-5 d-flex flex-column justify-content-between text-light">
+                    <a href="index.html">
+                        <img src="img/logo/tostrip-no-bg.png" class="logo-image" alt="Tos Trip Official Logo">
+                    </a>
+                    <div class="text">
+                        <h3>Angkor Wat Temple</h3>
+                        <p class="w-75 small mb-0">
+                            "The iconic heart of Cambodia, Angkor Wat is the world's largest religious monument, symbolizing ancient grandeur and timeless beauty."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="h-100 bg-light rounded-2 px-5 login-form
+                d-flex justify-content-center align-items-center">
+                    <form action="" class="w-100 px-5">
+                        <h2 class="text-center text-primary mb-0">Welcome back</h2>
+                        <p class="text-center my-4 py-1 pb-2">Sign in to continue your journey and access exclusive features with new experiences.</p>
+                        <div class="mx-3">
+                            <div class="mb-3 w-100 position-relative">
+                                <input class="form-control w-100 rounded-pill" id="email" type="email" placeholder="" aria-label="">
+                                <label for="email" class="form-label position-absolute">
+                                    Enter your email
+                                </label>
+                            </div>
+                            <div class="w-100 position-relative">
+                                <input class="form-control w-100 rounded-pill" id="password" type="password" placeholder="" aria-label="">
+                                <label for="password" class="form-label position-absolute">
+                                    Enter your password
+                                </label>
+                            </div>
+                            <a href="homepage.html" class="btn btn-login my-4 w-100 rounded-pill text-light">Log in</a>
+                            <span class="w-100 d-block other-way text-center position-relative">or</span>
+                            <span class="text-center d-block my-4">Don't have an account? 
+                                <a href="Register-Page.html">Create Account</a>
+                            </span>
+                            <a href="homepage.html" class="btn btn-login media-login-btn my-2 w-100 rounded-pill">
+                                <i class="fa-brands fa-google"></i>
+                                Log in with Google
+                            </a>
+                            <a href="homepage.html" class="btn btn-login media-login-btn w-100 rounded-pill">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                Log in with Facebook
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

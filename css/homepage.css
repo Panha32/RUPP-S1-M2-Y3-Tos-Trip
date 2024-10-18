@@ -1,0 +1,12 @@
+.header-home .wrapper-button i {
+    transition: all 0.2s ease-in-out;
+}
+.header-home .wrapper-button i:hover {
+    cursor: pointer;
+    color: var(--main-color)
+}
+
+
+.header-home .wrapper-button .fa-circle-question {
+    font-size: 17px;
+}

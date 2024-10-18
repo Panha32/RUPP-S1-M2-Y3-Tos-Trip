@@ -50,6 +50,10 @@ body {
     color: var(--main-color);
 }
 
+.logo-image {
+    width: 180px !important;
+}
+
 /* ===== style navbar in landing-page ===== */
 .header-landing {
     font-family: "Roboto Mono", monospace;
@@ -57,6 +61,7 @@ body {
 header .navbar .navbar-nav::-webkit-scrollbar {
     display: none;
 }
+
 .header-landing .navbar .btn-support {
     color: var(--secondary-btn);
 }
