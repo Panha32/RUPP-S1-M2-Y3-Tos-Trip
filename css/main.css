@@ -103,3 +103,64 @@ header .navbar .navbar-nav::-webkit-scrollbar {
 .header-landing .navbar .navbar-nav .nav-item .nav-link:hover::after{
     transform: scaleX(1);
 }
+
+/* ===== style for footer ===== */
+.footer {
+    font-family: "Roboto Mono", monospace;
+    color: var(--sub-text);
+    background-color: #1a2651;
+}
+
+.footer .top-footer .social-icon {
+    width: 35px;
+    height: 35px;
+    margin: 7px 8px;
+    background-color: var(--main-color);
+    color: #1a2651;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+.footer .top-footer .social-icon:hover {
+    cursor: pointer;
+    background-color: transparent;
+    background-color: var(--main-color-2);
+}
+.footer .top-footer .social-icon::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    background-color: var(--main-color-2);
+    transition: all 0.2s ease-in-out;
+}
+.footer .top-footer .social-icon:hover::after {
+    top: 0;
+    left: 0;
+}
+.footer .top-footer .social-icon i {
+    position: absolute;
+    z-index: 3;
+}
+
+.footer .top-footer a {
+    color: var(--sub-text);
+    transition: all 0.2s ease-in;
+}
+.footer .top-footer a:hover {
+    color: var(--main-color-2);
+}
+
+.footer .bottom-footer {
+    background-color: #233c8562;
+}
+.footer .bottom-footer h6 {
+    color: #ccc;
+}
