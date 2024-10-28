@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results Page</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/tostrip-web.ico">
+    <link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugin/swipper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/search_result.css">
+</head>
+<body>
+    <header class="header-landing header-home position-sticky top-0 bg-white z-3">
+        <nav class="navbar pb-0">
+            <div class="container px-0">
+                <div class="w-100 d-flex justify-content-between">
+                    <a class="navbar-brand p-0" href="#">
+                        <img src="img/logo/tostrip.png" class="logo-image" alt="Tos Trip Logo">
+                    </a>
+                    <div class="wrapper-button d-flex align-items-center gap-4">
+                        <a class="text-decoration-none btn btn-outline-primary py-0 rounded-1" href="#">
+                            My Bookings
+                        </a>
+                        <i class="fa-regular fa-circle-question"></i>
+                        <i class="fa-regular fa-bell fs-5"></i>
+                        <i class="fa-regular fa-circle-user fs-4"></i>
+                    </div>
+                </div>
+                <hr class="w-100 mt-2 mb-0">
+                <div class="overflow-hidden">
+                    <ul class="navbar-nav flex-row overflow-auto">
+                        <li class="nav-item">
+                            <!-- <a class="nav-link ms-0" href="#">ទាំងអស់</a> -->
+                            <a class="nav-link ms-0" href="#">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link active" href="#">ភ្នំពេញ</a> -->
+                            <a class="nav-link active" href="#">Phnom Penh</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">សៀមរាប</a> -->
+                            <a class="nav-link" href="#">Siem Reap</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពត</a> -->
+                            <a class="nav-link" href="#">Kampot</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កែប</a> -->
+                            <a class="nav-link" href="#">Kep</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កោះកុង</a> -->
+                            <a class="nav-link" href="#">Koh Kong</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">បាត់ដំបង</a> -->
+                            <a class="nav-link" href="#">Battambang</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពង់ស្ពឺ</a> -->
+                            <a class="nav-link" href="#">Kampong Speu</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពង់ធំ</a> -->
+                            <a class="nav-link" href="#">kampong Thom</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពង់ចាម</a> -->
+                            <a class="nav-link" href="#">Kampong Cham</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ព្រៃវែង</a> -->
+                            <a class="nav-link" href="#">Prey Veng</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កណ្តាល</a> -->
+                            <a class="nav-link" href="#">Kandal</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ក្រចេះ</a> -->
+                            <a class="nav-link" href="#">Kratié</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ប៉ៃលិន</a> -->
+                            <a class="nav-link" href="#">Pailin</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ឧត្ដរមានជ័យ</a> -->
+                            <a class="nav-link" href="#">Oddar Meanchey</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">បន្ទាយមានជ័យ</a> -->
+                            <a class="nav-link" href="#">Banteay Meanchey</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ព្រះវិហារ</a> -->
+                            <a class="nav-link" href="#">Preah Vihear</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ពោធិ៍សាត់</a> -->
+                            <a class="nav-link" href="#">Pursat</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ព្រះសីហនុ</a> -->
+                            <a class="nav-link" href="#">Preah Sihanouk</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ស្វាយរៀង</a> -->
+                            <a class="nav-link" href="#">Svay Rieng</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ស្ទឹងត្រែង</a> -->
+                            <a class="nav-link" href="#">Stung Treng</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">តាកែវ</a> -->
+                            <a class="nav-link" href="#">Takéo</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ត្បូងឃ្មុំ</a> -->
+                            <a class="nav-link" href="#">Tboung Khmum</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">រតនៈគិរី</a> -->
+                            <a class="nav-link" href="#">Ratanakiri</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">មណ្ឌលគិរី</a> -->
+                            <a class="nav-link" href="#">Mondulkiri</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពង់ឆ្នាំង</a> -->
+                            <a class="nav-link" href="#">Kampong Chhnang</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-search bg-secondary" style="background-image: url(img/search_result/hero-search.png);">
+            <div class="container h-100 position-relative">
+                <div class="row d-flex justify-content-center w-100 position-absolute">
+                    <div class="col-9 bg-light p-3 rounded-2">
+                        <div class="row g-2">
+                            <div class="col-10">
+                                <div class="row g-2">
+                                    <div class="col-4">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
+                                            <label for="location" class="form-label position-absolute">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                Location
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
+                                            <label for="checkIn" class="form-label position-absolute">
+                                                <i class="fa-regular fa-calendar-check"></i>
+                                                Check In
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
+                                            <label for="checkOut" class="form-label position-absolute">
+                                                <i class="fa-regular fa-calendar-xmark"></i>
+                                                Check Out
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
+                                            <label for="person" class="form-label position-absolute">
+                                                <i class="fa-solid fa-user"></i>
+                                                Person
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-search secondary-button rounded-1 py-1 w-100">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="explore py-5">
+            <div class="container mt-4">
+                <div class="row g-4">
+                    <div class="col-3">
+                        <div class="filter">
+                            <form action="" class="rounded-2 form-search-name p-3">
+                                <div class="search-name">
+                                    <label for="searchByname" class="form-label">Search by property name</label>
+                                    <div class="position-relative">
+                                        <input class="form-control rounded-1" id="searchByname" type="text" placeholder="e.g. Angkor" aria-label="">
+                                        <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="result">
+                            <div class="title-section animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                                <h4 class="text-secondary">Siem Reap: 246 search results found</h4>
+                            </div>
+                            <div class="mt-3 mb-4 d-flex justify-content-between align-items-start">
+                                <nav class="nav rounded-1 overflow-hidden">
+                                    <a class="nav-link active" aria-current="page" href="#">Our top picks</a>
+                                    <a class="nav-link" href="#">Hotel and Apartment</a>
+                                    <a class="nav-link" href="#">Guesthouse</a>
+                                    <a class="nav-link" href="#">Resort</a>
+                                    <a class="nav-link" href="#">Shared space</a>
+                                </nav>
+                                <div class="sort">
+                                    <div class="dropdown">
+                                        <button id="dropdownButton" class="dropdown-button rounded-2">
+                                          <span class="default-label position-absolute">Sort by</span>
+                                          <span class="selected-option"></span>
+                                          <i class="fa-solid fa-angle-down position-absolute"></i>
+                                        </button>
+                                        <div id="dropdownMenu" class="dropdown-menu p-0 overflow-hidden mt-1 position-absolute w-100"></div>
+                                    </div>                                                                            
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer mt-5">
+        <div class="top-footer py-5 d-flex flex-column align-items-center">
+            <a href="#">
+                <img src="img/logo/tostrip-1.png" class="logo-image" alt="">
+            </a>
+            <p class="text-center">Your trusted travel partner, offering the best stays<br> and exclusive deals across Cambodia.</p>
+            <ul class="list-group-flush d-flex">
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group-flush quick-link mt-3 d-flex gap-5">
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">About</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Flight</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Stay</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Car</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Terms of use</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Privancy and Policy</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom-footer py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-5">
+                    <div class="d-flex align-items-center gap-3">
+                        <div>
+                            <i class="fa-solid fa-mobile-screen fs-4"></i>
+                        </div>
+                        <div>
+                            <span>Have a question?</span>
+                            <h6 class="mb-0 mt-1">+855 762 160 141</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div>
+                            <i class="fa-regular fa-envelope fs-4"></i>
+                        </div>
+                        <div>
+                            <span>Have a question?</span>
+                            <h6 class="mb-0 mt-1">tostrip@tour.com</h6>
+                        </div>
+                    </div>
+                </div>
+                <div>&copy;2024,All Rights Reserved by 
+                    <a class="text-decoration-none" href="#">Tos Trip</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

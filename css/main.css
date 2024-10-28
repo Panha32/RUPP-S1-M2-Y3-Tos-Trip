@@ -50,6 +50,16 @@ body {
     color: var(--main-color);
 }
 
+.secondary-button {
+    background-color: var(--secondary-btn);
+    color: var(--text-white-2);
+    transition: all 0.4s ease;
+}
+.secondary-button:hover {
+    background-color: var(--secondary-btn-hover);
+    color: var(--text-white);
+}
+
 .logo-image {
     width: 180px !important;
 }
@@ -102,6 +112,37 @@ header .navbar .navbar-nav::-webkit-scrollbar {
 }
 .header-landing .navbar .navbar-nav .nav-item .nav-link:hover::after{
     transform: scaleX(1);
+}
+
+/* ===== style input ===== */
+.group .form-control {
+    color: var(--sub-text) !important;
+    border: 1px solid var(--main-color-2);
+    border: 1px solid #99c3f7;
+    border-radius: 3px;
+}
+
+.group .form-control:focus {
+    border: 1px solid var(--main-color);
+}
+.group .form-label {
+    color: #9a9999;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.group .form-control:focus + .form-label,
+.group .form-control:not(:placeholder-shown) + .form-label {
+    top: 0;
+    left: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--main-color);
+    background: var(--text-white);
+    padding: 0 6px;
 }
 
 /* ===== style for footer ===== */

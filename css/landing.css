@@ -69,39 +69,12 @@
     color: var(--text-white);
 }
 
-.hero-banner .search .input-field .group {
-    position: relative;
+.hero-banner .search .input-field .form-control {
+    padding: 6px 14px;
 }
 
-.hero-banner .search .input-field .form-control {
-    border-radius: 3px;
-    padding: 6px 16px;
-    border: 1px solid var(--main-color-2);
-}
-.hero-banner .search .input-field .form-control:focus {
-    border: 1px solid var(--main-color);
-}
-.hero-banner .search .input-field .form-label {
-    color: #9a9999;
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
 .hero-banner .search .input-field .form-label i {
     font-size: 14px;
-}
-
-.hero-banner .search .input-field .form-control:focus + .form-label,
-.hero-banner .search .input-field .form-control:not(:placeholder-shown) + .form-label {
-    top: 0;
-    left: 8px;
-    font-size: 13px;
-    color: var(--main-color);
-    background: var(--text-white);
-    padding: 0 6px;
 }
 
 .hero-banner .search .btn-search {
