@@ -7,8 +7,9 @@
     <link rel="icon" type="image/x-icon" href="img/logo/tostrip-web.ico">
     <link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="plugin/swipper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="plugin/rangeSlider/om-javascript-range-slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/search_result.css">
@@ -147,7 +148,7 @@
         <section class="hero-search bg-secondary" style="background-image: url(img/search_result/hero-search.png);">
             <div class="container h-100 position-relative">
                 <div class="row d-flex justify-content-center w-100 position-absolute">
-                    <div class="col-9 bg-light p-3 rounded-2">
+                    <div class="col-9 bg-light p-3 rounded-2 animate__animated wow animate__fadeIn">
                         <div class="row g-2">
                             <div class="col-10">
                                 <div class="row g-2">
@@ -200,7 +201,7 @@
         <section class="explore py-5">
             <div class="container mt-4">
                 <div class="row g-4">
-                    <div class="col-3">
+                    <div class="col-3 animate__animated wow animate__fadeIn">
                         <div class="filter">
                             <form action="" class="rounded-2 form-search-name p-3">
                                 <div class="search-name">
@@ -211,11 +212,142 @@
                                     </div>
                                 </div>
                             </form>
+                            <h5 class="my-3 ms-1">Filter by</h5>
+                            <form action="" class="filter-by filter-by-budget mb-3 overflow-hidden rounded-2">
+                                <div>
+                                    <div class="head">
+                                        <label for="" class="form-label py-2 mb-0 px-3">Your budget per day</label>
+                                    </div>
+                                    <div class="my-4 py-2 px-3">
+                                        <input type="range" name="pieces" id="inputPieces" multiple value="85, 900" min="25" max="1500" unit="$" />
+                                    </div>
+                                </div>
+                            </form>
+                            <form action="" class="filter-by mb-3 overflow-hidden rounded-2">
+                                <div>
+                                    <div class="head">
+                                        <label for="" class="form-label py-2 mb-0 px-3">Rating</label>
+                                    </div>
+                                    <span class="small text-secondary d-block ms-3 my-2">Show only ratings more than</span>
+                                    <ul class="list-group-flush p-0 m-3 mt-0 d-flex justify-content-between border px-3 rounded-1">
+                                        <li class="list-group-item rounded-0 py-1">
+                                            <span class="text-warning fs-5">&starf;</span>
+                                            <span>1</span>
+                                        </li>
+                                        <li class="list-group-item py-1">
+                                            <span class="text-warning fs-5">&starf;</span>
+                                            <span>2</span>
+                                        </li>
+                                        <li class="list-group-item py-1">
+                                            <span class="text-warning fs-5">&starf;</span>
+                                            <span>3</span>
+                                        </li>
+                                        <li class="list-group-item py-1">
+                                            <span class="text-warning fs-5">&starf;</span>
+                                            <span>4</span>
+                                        </li>
+                                        <li class="list-group-item rounded-0 py-1">
+                                            <span class="text-warning fs-5">&starf;</span>
+                                            <span>5</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                            <form action="" class="filter-by mb-3 filter-by-popular overflow-hidden rounded-2">
+                                <div>
+                                    <div class="head">
+                                        <label for="" class="form-label py-2 mb-0 px-3">Popular filters</label>
+                                    </div>
+                                    <ul class="list-group-flush p-0 my-3 text-secondary">
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="freeCancel">Free cancellation</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="freeCancel">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="spa">Spa</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="spa">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="petAllowed">Pet allowed</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="petAllowed">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="hotTub">Hot tub</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="hotTub">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="noCreditCard">Book without credit card</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="noCreditCard">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="noPrepayment">No prepayment</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="noPrepayment">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                            <form action="" class="filter-by filter-by-popular overflow-hidden rounded-2">
+                                <div>
+                                    <div class="head">
+                                        <label for="" class="form-label py-2 mb-0 px-3">Activities</label>
+                                    </div>
+                                    <ul class="list-group-flush p-0 my-3 text-secondary">
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="fishing">Fishing</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="fishing">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="fitness">Fitness</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="fitness">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="beach">Beach</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="beach">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="cycling">Cycling</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="cycling">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3 pb-2">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="sauna">Sauna</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="sauna">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-3">
+                                            <div class="form-check form-check-inline p-0 m-0 d-flex justify-content-between">
+                                                <label class="form-check-label" for="nightLight">Night lights</label>
+                                                <input class="form-check-input me-0" type="checkbox" id="nightLight">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-9 animate__animated wow animate__fadeIn">
                         <div class="result">
-                            <div class="title-section animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                            <div class="title-section">
                                 <h4 class="text-secondary">Siem Reap: 246 search results found</h4>
                             </div>
                             <div class="mt-3 mb-4 d-flex justify-content-between align-items-start">
@@ -302,6 +434,407 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 next">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 next">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 next">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 next">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 next">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 next">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 next">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 next">
+                                    <div class="card p-2 border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                                <div class="thumbnail rounded-1 overflow-hidden">
+                                                    <img src="img/trending/trending1.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="card-body h-100 d-flex align-items-stretch p-0 px-2 mx-1">
+                                                    <div>
+                                                        <h5 class="card-title mb-0">
+                                                            <a href="#" class="text-decoration-none text-dark">Siem Reap Angkor</a>
+                                                        </h5>
+                                                        <div class="rating text-warning my-2">
+                                                            <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                            <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                                        </div>
+                                                        <p class="sub-title small fw-medium mb-0">Standard double rooms</p>
+                                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <a href="#" class="btn secondary-button py-1 rounded-1">See availability</a>
+                                                    </div>
+                                                    <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                                        <span class="d-block discount text-light rounded-2 p-1 px-2">15% off</span>
+                                                        <span class="small text-secondary mt-1">1 day</span>
+                                                        <span class="price fs-4 fw-medium my-1">$150</span>
+                                                        <span class="small text-secondary">Includes taxes and fees</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mt-2 d-flex justify-content-center">
+                                        <button class="btn btn-loadMore rounded-1" onclick="loadMore()">Load more results</button>
                                     </div>
                                 </div>
                             </div>
@@ -394,10 +927,26 @@
     </footer>
 
     <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="plugin/rangeSlider/om-javascript-range-slider.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/dropdown.js"></script>
     <script>
         new WOW().init();
+
+        OmRangeSlider.init();
+
+        const loadMore = () => {
+            const hiddenElements = document.querySelectorAll('.col-12.next');
+            let count = 0;
+
+            hiddenElements.forEach(element => {
+                if (!element.classList.contains('show') && count < 2) {
+                    element.style.display = 'block';
+                    element.classList.add('show');
+                    count++;
+                }
+            });
+        };
     </script>
 </body>
 </html>

@@ -175,18 +175,127 @@
   display: block;
 }
 
-/* --------- search filter ---------- */
-.explore .filter .form-search-name {
-    background-color: #F2F2F2;
+.explore .result .btn-loadMore {
+  border: 1px solid transparent;
+  background-color: #e1ebf7;
+  color: #2642a7;
+  transition: all 0.3s ease;
+}
+.explore .result .btn-loadMore:hover {
+  border: 1px solid #99c3f7;
+  color: #1a2651;
 }
 
-.explore .filter .search-name i{
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-10px); 
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.explore .result .col-12.next {
+  display: none; 
+  opacity: 0;
+}
+
+.explore .result .col-12.next.show {
+  display: block; 
+  animation: fadeIn 1s forwards; 
+}
+
+/* --------- search filter ---------- */
+.explore .filter .form-search-name {
+  background-color: #f2f2f2;
+}
+
+.explore .filter .search-name i {
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .explore .filter .search-name .form-control {
-    padding-left: 35px;
+  padding-left: 35px;
 }
+
+.explore .filter .filter-by {
+  border: 1px solid #dde9fc;
+}
+
+.explore .filter .filter-by .head {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #dde9fc;
+}
+
+.explore .filter .filter-by .list-group-flush .list-group-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.explore .filter .filter-by .list-group-flush .list-group-item::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  top: 0;
+  right: -50%;
+  transform: translateX(50%);
+  position: absolute;
+  background-color: #ccc;
+}
+.explore
+  .filter
+  .filter-by
+  .list-group-flush
+  .list-group-item:last-child::before {
+  display: none;
+}
+
+.explore
+  .filter
+  .filter-by.filter-by-popular
+  .list-group-flush
+  .list-group-item {
+  font-size: 14px;
+}
+
+.explore
+  .filter
+  .filter-by.filter-by-popular
+  .list-group-flush
+  .list-group-item
+  .form-check-input {
+  border: 1px solid #b9b8b8;
+}
+
+.explore .filter .filter-by.filter-by-budget .om-sliderrange-range:before,
+.explore .filter .filter-by.filter-by-budget .om-sliderrange-range-indicator {
+  height: 8px;
+  border-radius: 2px;
+}
+
+.explore .filter .filter-by.filter-by-budget .om-sliderrange-range-indicator {
+  background-color: #69a3f1;
+}
+
+.om-sliderrange-button-start, 
+.om-sliderrange-button-end {
+  width: 16px;
+  height: 16px;
+  border: 5px inset #8a4616;
+  background-color: transparent;
+  top: 100%;
+}
+
+.om-sliderrange-display {
+  justify-content: space-evenly;
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--sub-text);
+}
+
