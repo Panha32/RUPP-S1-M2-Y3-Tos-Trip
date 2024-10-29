@@ -1,0 +1,39 @@
+.hero-details .image {
+    width: 100%;
+    height: 450px;
+}
+
+.hero-details .image.sub-image {
+    height: calc((450px / 2) - 8px);
+}
+
+.hero-details .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== style for menu details section ===== */
+.menu-details .nav .nav-item {
+    border-bottom: 3px solid transparent;
+}
+.menu-details .nav .nav-item:first-child,
+.menu-details .nav .nav-item:hover {
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* ===== style for details section */
+.details {
+    border-top: 1px solid #ddd;
+    background-color: #f2f2f2;
+}
+
+.details .tab-content .text,
+.details .tab-content .facilities .list-group-flush  {
+    color: var(--sub-text);
+    font-size: 15px;
+}
+
+.details .tab-content .facilities .list-group-flush .list-group-item i {
+    font-size: 17px;
+}
