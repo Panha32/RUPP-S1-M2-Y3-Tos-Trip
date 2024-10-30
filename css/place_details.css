@@ -37,3 +37,9 @@
 .details .tab-content .facilities .list-group-flush .list-group-item i {
     font-size: 17px;
 }
+
+.details .tab-content .map {
+    width: 100%;
+    height: 300px;
+    border: 1px solid var(--main-color-2);
+}
