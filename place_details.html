@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/place_details.css">
 </head>
 <body>
-    <header class="header-landing header-home position-sticky top-0 bg-white z-3">
+    <header id="header" class="header-landing header-home header-visible sticky bg-white">
         <nav class="navbar pb-0">
             <div class="container px-0">
                 <div class="w-100 d-flex justify-content-between">
@@ -169,17 +169,17 @@
                 </div>
             </div>
         </section>
-        <section class="menu-details">
+        <section class="menu-details bg-white" id="menu">
             <div class="container">
                 <ul class="nav bg-white" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link active text-secondary" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Overviews</button>
+                      <button class="nav-link active sub-menu" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-tab-pane" type="button" role="tab" aria-controls="overview-tab-pane" aria-selected="true">Overviews</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link text-secondary" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Rooms</button>
+                      <button class="nav-link sub-menu" id="room-tab" data-bs-toggle="tab" data-bs-target="#room-tab-pane" type="button" role="tab" aria-controls="room-tab-pane" aria-selected="false">Rooms</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link text-secondary" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Guest Reviews</button>
+                      <button class="nav-link sub-menu" id="review-tab" data-bs-toggle="tab" data-bs-target="#review-tab-pane" type="button" role="tab" aria-controls="review-tab-pane" aria-selected="false">Guest Reviews</button>
                     </li>
                 </ul>
             </div>
@@ -187,7 +187,7 @@
         <section class="details py-5">
             <div class="container">
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
                         <div class="row g-3">
                             <div class="col-8">
                                 <div>
@@ -287,8 +287,110 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">2</div>
-                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">3</div>
+                    <div class="tab-pane fade" id="room-tab-pane" role="tabpanel" aria-labelledby="room-tab" tabindex="0">
+                        <h4 class="mb-0">Available Rooms</h4>
+                        <div class="row gx-2 p-3 my-4 bg-white rounded-2">
+                            <div class="col-10">
+                                <div class="row gx-2">
+                                    <div class="col-4">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
+                                            <label for="checkIn" class="form-label position-absolute">
+                                                <i class="fa-regular fa-calendar-check"></i>
+                                                Check In
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
+                                            <label for="checkOut" class="form-label position-absolute">
+                                                <i class="fa-regular fa-calendar-xmark"></i>
+                                                Check Out
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
+                                            <label for="person" class="form-label position-absolute">
+                                                <i class="fa-solid fa-user"></i>
+                                                Person
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-search secondary-button rounded-1 w-100">Search</button>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-3"></div>
+                            <div class="col-3">
+                                <div class="card border-0 h-100">
+                                    <div class="image w-100">
+                                        <img src="img/place_detail/card-1.png" class="card-img-top h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="text-decoration-none text-dark">
+                                            <h5 class="card-title">Deluxe Room With Balcony</h5>
+                                        </a>
+                                        <ul class="list-group-flush p-0 m-0 text-secondary small">
+                                            <li class="list-group-item mb-2"><b>1 king bed</b></li>
+                                            <li class="list-group-item mb-2">28m<sup>2</sup> | Floor: 3-9</li>
+                                            <li class="list-group-item mb-2">Balcony</li>
+                                            <li class="list-group-item">Air conditioning & Private bathroom</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer border-0">
+                                        <button class="btn secondary-button py-1 w-100 rounded-1"><small>Reserve suit</small></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card border-0 h-100">
+                                    <div class="image w-100">
+                                        <img src="img/place_detail/card-2.png" class="card-img-top h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="text-decoration-none text-dark">
+                                            <h5 class="card-title">Deluxe Twin Room</h5>
+                                        </a>
+                                        <ul class="list-group-flush p-0 m-0 text-secondary small">
+                                            <li class="list-group-item mb-2"><b>2 single beds</b></li>
+                                            <li class="list-group-item mb-2">28m<sup>2</sup> | Floor: 3-9</li>
+                                            <li class="list-group-item">Air conditioning & Private bathroom</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer border-0">
+                                        <button class="btn secondary-button py-1 w-100 rounded-1"><small>Reserve suit</small></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card border-0 h-100">
+                                    <div class="image w-100">
+                                        <img src="img/place_detail/card-3.png" class="card-img-top h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="text-decoration-none text-dark">
+                                            <h5 class="card-title">Family Suite</h5>
+                                        </a>
+                                        <ul class="list-group-flush p-0 m-0 text-secondary small">
+                                            <li class="list-group-item mb-2"><b>1 single bed and 1 king bed</b></li>
+                                            <li class="list-group-item mb-2">36m<sup>2</sup> | Floor: 3-9</li>
+                                            <li class="list-group-item">Air conditioning & Private bathroom</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer border-0">
+                                        <button class="btn secondary-button py-1 w-100 rounded-1"><small>Reserve suit</small></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="review-tab-pane" role="tabpanel" aria-labelledby="review-tab" tabindex="0">3</div>
                 </div>
             </div>
         </section>
@@ -389,6 +491,36 @@
                 tabTrigger.show()
             })
         })
+
+        // ---------------
+        const header = document.getElementById("header");
+        const menu = document.getElementById("menu");
+        const myTab = document.getElementById("myTab");
+        const subMenus = document.querySelectorAll(".sub-menu");
+
+        window.addEventListener("scroll", () => {
+            const menuTop = menu.getBoundingClientRect().top;
+            if (menuTop <= 70) {
+                header.classList.remove("header-visible");
+                header.classList.add("header-hidden");
+            } else {
+                header.classList.remove("header-hidden");
+                header.classList.add("header-visible");
+            }
+            if (menuTop <= 1) {
+                menu.classList.add("sticky", "menu-sticky");
+                myTab.classList.add("menu-sticky");
+                subMenus.forEach((subMenu) => {
+                    subMenu.style.color = "#ffffff";
+                });
+            } else {
+                menu.classList.remove("menu-sticky");
+                myTab.classList.remove("menu-sticky");
+                subMenus.forEach((subMenu) => {
+                    subMenu.style.color = "#71757D";
+                });
+            }
+        });
     </script>
 </body>
 </html>

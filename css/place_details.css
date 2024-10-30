@@ -1,45 +1,91 @@
 .hero-details .image {
-    width: 100%;
-    height: 450px;
+  width: 100%;
+  height: 450px;
 }
 
 .hero-details .image.sub-image {
-    height: calc((450px / 2) - 8px);
+  height: calc((450px / 2) - 8px);
 }
 
 .hero-details .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ===== style for menu details section ===== */
-.menu-details .nav .nav-item {
-    border-bottom: 3px solid transparent;
+.menu-details .nav .nav-item .nav-link {
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease-in;
+  color: #71757D;
 }
-.menu-details .nav .nav-item:first-child,
-.menu-details .nav .nav-item:hover {
-    border-bottom: 3px solid var(--main-color);
+
+.menu-details .nav .nav-item .nav-link:hover,
+.menu-details .nav .nav-item .nav-link:focus {
+  border-bottom: 3px solid var(--main-color);
+  box-shadow: none;
 }
 
 /* ===== style for details section */
+.details .tab-content .card,
+.details .tab-content .card h5 {
+    transition: all 0.3s ease-in;
+}
 .details {
-    border-top: 1px solid #ddd;
-    background-color: #f2f2f2;
+  border-top: 1px solid #ddd;
+  background-color: #f2f2f2;
 }
 
 .details .tab-content .text,
-.details .tab-content .facilities .list-group-flush  {
-    color: var(--sub-text);
-    font-size: 15px;
+.details .tab-content .facilities .list-group-flush {
+  color: var(--sub-text);
+  font-size: 15px;
 }
 
 .details .tab-content .facilities .list-group-flush .list-group-item i {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 .details .tab-content .map {
-    width: 100%;
-    height: 300px;
-    border: 1px solid var(--main-color-2);
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--main-color-2);
 }
+
+.details .tab-content .card {
+    border: 1px solid transparent !important;
+}
+.details .tab-content .card:hover {
+    border: 1px solid var(--main-color-2) !important;
+}
+.details .tab-content .card h5:hover {
+    text-decoration: underline;
+}
+
+.details .tab-content .card .image {
+  height: 180px;
+}
+.details .tab-content .card .image img {
+  object-fit: cover;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+.header-hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.header-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.menu-sticky {
+  background-color: var(--main-color) !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
