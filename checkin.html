@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkin Page</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/tostrip-web.ico">
+    <link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugin/swipper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/checkin.css">
+</head>
+<body>
+    <header class="header-landing header-home position-sticky top-0 bg-white z-3">
+        <nav class="navbar pb-0">
+            <div class="container px-0">
+                <div class="w-100 d-flex justify-content-between">
+                    <a class="navbar-brand p-0" href="#">
+                        <img src="img/logo/tostrip.png" class="logo-image" alt="Tos Trip Logo">
+                    </a>
+                    <div class="wrapper-button d-flex align-items-center gap-4">
+                        <a class="text-decoration-none btn btn-outline-primary py-0 rounded-1" href="#">
+                            My Bookings
+                        </a>
+                        <i class="fa-regular fa-circle-question"></i>
+                        <i class="fa-regular fa-bell fs-5"></i>
+                        <i class="fa-regular fa-circle-user fs-4"></i>
+                    </div>
+                </div>
+                <hr class="w-100 mt-2 mb-0">
+                <div class="overflow-hidden">
+                    <ul class="navbar-nav flex-row overflow-auto">
+                        <li class="nav-item">
+                            <!-- <a class="nav-link ms-0" href="#">ទាំងអស់</a> -->
+                            <a class="nav-link ms-0" href="#">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link active" href="#">ភ្នំពេញ</a> -->
+                            <a class="nav-link active" href="#">Phnom Penh</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">សៀមរាប</a> -->
+                            <a class="nav-link" href="#">Siem Reap</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពត</a> -->
+                            <a class="nav-link" href="#">Kampot</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កែប</a> -->
+                            <a class="nav-link" href="#">Kep</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កោះកុង</a> -->
+                            <a class="nav-link" href="#">Koh Kong</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">បាត់ដំបង</a> -->
+                            <a class="nav-link" href="#">Battambang</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពង់ស្ពឺ</a> -->
+                            <a class="nav-link" href="#">Kampong Speu</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពង់ធំ</a> -->
+                            <a class="nav-link" href="#">kampong Thom</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពង់ចាម</a> -->
+                            <a class="nav-link" href="#">Kampong Cham</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ព្រៃវែង</a> -->
+                            <a class="nav-link" href="#">Prey Veng</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កណ្តាល</a> -->
+                            <a class="nav-link" href="#">Kandal</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ក្រចេះ</a> -->
+                            <a class="nav-link" href="#">Kratié</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ប៉ៃលិន</a> -->
+                            <a class="nav-link" href="#">Pailin</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ឧត្ដរមានជ័យ</a> -->
+                            <a class="nav-link" href="#">Oddar Meanchey</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">បន្ទាយមានជ័យ</a> -->
+                            <a class="nav-link" href="#">Banteay Meanchey</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ព្រះវិហារ</a> -->
+                            <a class="nav-link" href="#">Preah Vihear</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ពោធិ៍សាត់</a> -->
+                            <a class="nav-link" href="#">Pursat</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ព្រះសីហនុ</a> -->
+                            <a class="nav-link" href="#">Preah Sihanouk</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ស្វាយរៀង</a> -->
+                            <a class="nav-link" href="#">Svay Rieng</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ស្ទឹងត្រែង</a> -->
+                            <a class="nav-link" href="#">Stung Treng</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">តាកែវ</a> -->
+                            <a class="nav-link" href="#">Takéo</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">ត្បូងឃ្មុំ</a> -->
+                            <a class="nav-link" href="#">Tboung Khmum</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">រតនៈគិរី</a> -->
+                            <a class="nav-link" href="#">Ratanakiri</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">មណ្ឌលគិរី</a> -->
+                            <a class="nav-link" href="#">Mondulkiri</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="#">កំពង់ឆ្នាំង</a> -->
+                            <a class="nav-link" href="#">Kampong Chhnang</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkin py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <div>
+                            <div class="title-section mb-4 animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                                <h3>Secure your reservation</h3>
+                            </div>
+                            <form action="" class="room-form rounded-2 overflow-hidden">
+                                <div class="title p-3 py-2 mb-4">
+                                    <i class="fa-solid fa-house-user"></i> Room 1 
+                                    <span class="small text-secondary">2 adults, 1 single bed and 1 king bed</span>
+                                </div>
+                                <div class="row g-3 mt-1 p-3 pt-0">
+                                    <div class="col-6">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="fName" type="text" placeholder="" aria-label="">
+                                            <label for="fName" class="form-label position-absolute">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="group position-relative">
+                                            <input class="form-control" id="lName" type="text" placeholder="" aria-label="">
+                                            <label for="lName" class="form-label position-absolute">Last Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer mt-5">
+        <div class="top-footer py-5 d-flex flex-column align-items-center">
+            <a href="#">
+                <img src="img/logo/tostrip-1.png" class="logo-image" alt="">
+            </a>
+            <p class="text-center">Your trusted travel partner, offering the best stays<br> and exclusive deals across Cambodia.</p>
+            <ul class="list-group-flush d-flex">
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group-flush quick-link mt-3 d-flex gap-5">
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">About</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Flight</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Stay</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Car</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Terms of use</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Privancy and Policy</a>
+                </li>
+                <li class="list-group-item mx-4">
+                    <a class="text-decoration-none" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom-footer py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-5">
+                    <div class="d-flex align-items-center gap-3">
+                        <div>
+                            <i class="fa-solid fa-mobile-screen fs-4"></i>
+                        </div>
+                        <div>
+                            <span>Have a question?</span>
+                            <h6 class="mb-0 mt-1">+855 762 160 141</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div>
+                            <i class="fa-regular fa-envelope fs-4"></i>
+                        </div>
+                        <div>
+                            <span>Have a question?</span>
+                            <h6 class="mb-0 mt-1">tostrip@tour.com</h6>
+                        </div>
+                    </div>
+                </div>
+                <div>&copy;2024,All Rights Reserved by 
+                    <a class="text-decoration-none" href="#">Tos Trip</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+
+        const form_control = [document.getElementById('fName'), document.getElementById('lName')];
+
+        form_control.forEach(input => {
+            input.addEventListener('input', function () {
+            if (input.value) {
+                input.style.borderColor = '#99c3f7'; 
+            } else {
+                input.style.borderColor = '';  
+            }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.checkin {
+    background-color: F4F4F4;
+}
+
+.checkin .room-form {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.checkin .room-form .title {
+    background-color: #eaeaea;
+    border-bottom: 1px solid #ddd;
+}
+
+.checkin .room-form .group .form-control {
+    border: 1px solid #ddddddb5;
+    font-size: 14px;
+}
+.checkin .room-form .group .form-control:focus {
+    border-color: var(--main-color);
+}
+
+.checkin .room-form .group .form-label {
+    font-size: 14px;
+}
+
+.checkin .room-form .group .form-control:focus + .form-label,
+.checkin .room-form .group .form-control:not(:placeholder-shown) + .form-label {
+    font-size: 11px;
+}
