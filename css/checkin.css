@@ -66,3 +66,25 @@
 .checkin .room-form p a:hover {
     text-decoration: underline !important;
 }
+
+.checkin .card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.checkin .card .image {
+    height: 260px;
+}
+.checkin .card .image img {
+    object-fit: cover;
+}
+
+.checkin .card .list-group-flush .list-group-item,
+.checkin .card #numStay,
+.checkin .priceCalculate .list-group-item {
+    color: #4F4F4F;
+}
+
+.checkin .usePromotion:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

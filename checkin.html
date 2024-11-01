@@ -296,7 +296,9 @@
                                     <a href="#" class="text-decoration-none">Terms of Use</a>.
                                 </p>
                                 <div class="w-100 d-flex justify-content-center p-4 pt-0 mb-1">
-                                    <button class="btn rounded-1 secondary-button">Complete Booking</button>
+                                    <button type="button" onclick="booking()" class="btn rounded-1 secondary-button">
+                                        Complete Booking
+                                    </button>
                                 </div>
                                 <p class="small text-secondary px-4">
                                     <i class="fa-solid fa-table-cells-row-lock me-1"></i> We use secure transmission and encrypted storage to protect your person information.
@@ -304,10 +306,78 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <div class="card border-0 mb-4 overflow-hidden">
+                            <div class="image">
+                                <img src="img/place_detail/card-3.png" class="w-100 h-100" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Harmony Phnom Penh Hotel</h5>
+                                <div class="rating my-2">
+                                    <span class="fs-5 text-warning">
+                                        &starf;&starf;&starf;&starf;&star;
+                                    </span>
+                                    <span>4.5 (1200 Reviews)</span>
+                                </div>
+                                <span class="small text-danger">Non refundable</span>
+                                <ul class="list-group-flush p-0 m-0 mt-2 small">
+                                    <li class="list-group-item mb-2">
+                                        <span>Check in: </span>
+                                        <span>Wednesday, 6 November, 2024</span>
+                                    </li>
+                                    <li class="list-group-item mb-2">
+                                        <span>Check out: </span>
+                                        <span>Saturday, 9 November, 2024</span>
+                                    </li>
+                                </ul>
+                                <span id="numStay">3 night stay</span>
+                            </div>
+                        </div>
+                        <div class="room-form rounded-2 mb-4 overflow-hidden">
+                            <div class="title p-3 py-2">
+                                Price Details
+                            </div>
+                            <ul class="list-group-flush p-3 pb-0 m-0 priceCalculate small">
+                                <li class="list-group-item mb-2 d-flex justify-content-between">
+                                    <span>1 room & 3 night</span>
+                                    <span>$150.00</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Tax and service fees</span>
+                                    <span>$8.52</span>
+                                </li>
+                            </ul>
+                            <hr>
+                            <div class="d-flex justify-content-between px-3">
+                                <small><b>Total</b></small>
+                                <span class="fs-5"><b>$158.52</b></span>
+                            </div>
+                            <span class="text-primary usePromotion small d-block px-3 pb-3 opacity-75">Use a coupon, credit or promotional code</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-4">
+                        <div class="gif d-flex justify-content-center">
+                            <img src="img/check/done.gif" width="260px" height="260px" alt="Gif">
+                        </div>
+                        <p class="text-secondary text-center mb-1">
+                            Congratulations your reservation has been made.
+                        </p>
+                        <p class="text-secondary text-center mb-4">
+                            You will be notified 2 day prior the date.
+                        </p>
+                        <button type="button" class="btn secondary-button py-1 rounded-1 w-100" onclick="closeBooking()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -400,7 +470,8 @@
                         [
                             document.getElementById('fName'), 
                             document.getElementById('lName'), 
-                            document.getElementById('cardName'), 
+                            document.getElementById('cardName'),
+                            document.getElementById('email'), 
                             document.getElementById('phoneNumber'),
                             document.getElementById('cardNumber'), 
                             document.getElementById('securityCode'), 
@@ -420,9 +491,36 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             const defaultValue = document.getElementById('email');
-            defaultValue.value = "panhacoder168@gmail.com";
+            defaultValue.value = "panhacoderjs168@gmail.com";
             defaultValue.style.borderColor = '#99c3f7';
         });
+
+        let modalEl = document.getElementById('staticBackdrop');
+        let modalInstance = new bootstrap.Modal(modalEl);
+        modalInstance.show();
+
+        let booking = () => {
+            let allInputFilled = true;
+
+            form_control.forEach(input => {
+                if(input.value.trim() === '') {
+                    input.style.borderColor = '#f62e2e80';
+                    allInputFilled = false;
+                }
+            })
+            if(!allInputFilled) {
+                alert("Please fill out all required fields to complete your booking!");
+                return;
+            }
+            modalInstance.show();
+        }
+
+        let closeBooking = () => {
+            modalInstance.hide();
+            setTimeout(goTo = () => {
+                location.href = 'my_booking.html';
+            }, 1000)
+        }
     </script>
 </body>
 </html>
