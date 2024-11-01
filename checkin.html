@@ -152,12 +152,12 @@
                             <div class="title-section mb-4 animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
                                 <h3>Secure your reservation</h3>
                             </div>
-                            <form action="" class="room-form rounded-2 overflow-hidden">
+                            <form action="" class="room-form rounded-2 mb-4 overflow-hidden">
                                 <div class="title p-3 py-2 mb-4">
-                                    <i class="fa-solid fa-house-user"></i> Room 1 
-                                    <span class="small text-secondary">2 adults, 1 single bed and 1 king bed</span>
+                                    <i class="fa-solid fa-house-user me-1"></i> Room 1 
+                                    <span class="small text-secondary ps-1">2 adults, 1 single bed and 1 king bed</span>
                                 </div>
-                                <div class="row g-3 mt-1 p-3 pt-0">
+                                <div class="row g-3 p-4 pt-0 mt-1">
                                     <div class="col-6">
                                         <div class="group position-relative">
                                             <input class="form-control" id="fName" type="text" placeholder="" aria-label="">
@@ -170,7 +170,137 @@
                                             <label for="lName" class="form-label position-absolute">Last Name</label>
                                         </div>
                                     </div>
+                                    <div class="col-6">
+                                        <div class="group position-relative mt-2">
+                                            <input class="form-control" id="email" type="text" placeholder="" aria-label="">
+                                            <label for="email" class="form-label position-absolute">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row g-0 mt-2">
+                                            <div class="col-3">
+                                                <button class="btn btn-country w-100 d-flex align-items-center justify-content-between">
+                                                    <img src="img/check/khmerFlag.png" width="20px" alt="Khmer Flag">
+                                                    +855 <i class="fa-solid fa-angle-down"></i>
+                                                </button>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="group position-relative">
+                                                    <input class="form-control" id="phoneNumber" type="text" placeholder="" aria-label="">
+                                                    <label for="phoneNumber" class="form-label position-absolute">Phone Number</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" value="" id="recieve">
+                                            <label class="form-check-label text-secondary small text-decoration-underline opacity-75" for="recieve">
+                                                <small>Recieve text alerts about this action</small>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
+                            </form>
+                            <form action="" class="room-form rounded-2 mb-4 overflow-hidden">
+                                <div class="title p-3 py-2 mb-4">
+                                    <i class="fa-solid fa-credit-card me-1"></i> Payment Options
+                                </div>
+                                <div class="d-flex px-4 g-0 justify-content-between">
+                                    <ul class="nav small" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link rounded-1 active text-dark" id="cardPay-tab" data-bs-toggle="tab" data-bs-target="#cardPay-tab-pane" type="button" role="tab" aria-controls="cardPay-tab-pane" aria-selected="true">Debit/Credit Card</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link rounded-1 text-secondary" id="payPal-tab" data-bs-toggle="tab" data-bs-target="#payPal-tab-pane" type="button" role="tab" aria-controls="payPal-tab-pane" aria-selected="false" disabled>Paypal</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link rounded-1 text-secondary" id="bankTransfer-tab" data-bs-toggle="tab" data-bs-target="#bankTransfer-tab-pane" type="button" role="tab" aria-controls="bankTransfer-tab-pane" aria-selected="false" disabled>Bank Transfer</button>
+                                        </li>
+                                    </ul>
+                                    <div class="d-flex gap-1">
+                                        <div class="card-image rounded-1 overflow-hidden">
+                                            <img src="img/check/alipayHK.png" alt="">
+                                        </div>
+                                        <div class="card-image rounded-1 overflow-hidden">
+                                            <img src="img/check/paypal.png" alt="">
+                                        </div>
+                                        <div class="card-image rounded-1 overflow-hidden">
+                                            <img src="img/check/card-card.png" alt="">
+                                        </div>
+                                        <div class="card-image rounded-1 overflow-hidden">
+                                            <img src="img/check/visa.png" alt="">
+                                        </div>
+                                        <div class="card-image rounded-1 overflow-hidden">
+                                            <img src="img/check/master.png" alt="">
+                                        </div>
+                                        <div class="card-image rounded-1 overflow-hidden">
+                                            <img src="img/check/applePay.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active pb-2" id="cardPay-tab-pane" role="tabpanel" aria-labelledby="cardPay-tab" tabindex="0">
+                                        <div class="row g-3 p-4 pt-0 mt-1">
+                                            <div class="col-12">
+                                                <div class="group position-relative mt-2">
+                                                    <input class="form-control" id="cardName" type="text" placeholder="" aria-label="">
+                                                    <label for="cardName" class="form-label position-absolute">Name on Card</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="group position-relative mt-2">
+                                                    <input class="form-control" id="cardNumber" type="text" placeholder="" aria-label="">
+                                                    <label for="cardNumber" class="form-label position-absolute">Debit/Credit Card Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="group position-relative mt-2">
+                                                    <input class="form-control" id="expireDate" type="text" placeholder="" aria-label="">
+                                                    <label for="expireDate" class="form-label position-absolute">Expiration Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="group position-relative mt-2">
+                                                    <input class="form-control" id="securityCode" type="text" placeholder="" aria-label="">
+                                                    <label for="securityCode" class="form-label position-absolute">Security Code</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="group position-relative mt-2">
+                                                    <input class="form-control" id="zipCode" type="text" placeholder="" aria-label="">
+                                                    <label for="zipCode" class="form-label position-absolute">Billing Zip Code</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="payPal-tab-pane" role="tabpanel" aria-labelledby="payPal-tab" tabindex="0">2</div>
+                                    <div class="tab-pane fade" id="bankTransfer-tab-pane" role="tabpanel" aria-labelledby="bankTransfer-tab" tabindex="0">3</div>
+                                </div>
+                            </form>
+                            <form action="" class="room-form rounded-2 mb-4 overflow-hidden">
+                                <div class="title p-3 py-2 mb-4">
+                                    <i class="fa-solid fa-circle-info me-1"></i> Important information about your booking
+                                </div>
+                                <ol class="px-5 small" style="color: #333333">
+                                    <li class="mb-2">This rate is non-refundable. If you change or cancel your booking you will not get your refund or credit to use for a future stay.</li>
+                                    <li class="mb-2">Stay extensions will require a new reservation</li>
+                                    <li class="mb-2">Front desk staff will greet guests on arrival</li>
+                                    <li>No refunds will be issued for late check-in or early check-out.</li>
+                                </ol>
+                                <p class="small text-secondary px-4">
+                                    By clicking the button below, I acknowledge that I have reviewed the 
+                                    <a href="#" class="text-decoration-none">Privancy Statement</a>
+                                    and have reviewed and accepted the 
+                                    <a href="#" class="text-decoration-none">Rules and Restrictions</a> and 
+                                    <a href="#" class="text-decoration-none">Terms of Use</a>.
+                                </p>
+                                <div class="w-100 d-flex justify-content-center p-4 pt-0 mb-1">
+                                    <button class="btn rounded-1 secondary-button">Complete Booking</button>
+                                </div>
+                                <p class="small text-secondary px-4">
+                                    <i class="fa-solid fa-table-cells-row-lock me-1"></i> We use secure transmission and encrypted storage to protect your person information.
+                                </p>
                             </form>
                         </div>
                     </div>
@@ -180,7 +310,7 @@
         </section>
     </main>
 
-    <footer class="footer mt-5">
+    <footer class="footer">
         <div class="top-footer py-5 d-flex flex-column align-items-center">
             <a href="#">
                 <img src="img/logo/tostrip-1.png" class="logo-image" alt="">
@@ -266,7 +396,17 @@
     <script>
         new WOW().init();
 
-        const form_control = [document.getElementById('fName'), document.getElementById('lName')];
+        const form_control = 
+                        [
+                            document.getElementById('fName'), 
+                            document.getElementById('lName'), 
+                            document.getElementById('cardName'), 
+                            document.getElementById('phoneNumber'),
+                            document.getElementById('cardNumber'), 
+                            document.getElementById('securityCode'), 
+                            document.getElementById('expireDate'), 
+                            document.getElementById('zipCode')
+                        ];
 
         form_control.forEach(input => {
             input.addEventListener('input', function () {
@@ -276,6 +416,12 @@
                 input.style.borderColor = '';  
             }
             });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const defaultValue = document.getElementById('email');
+            defaultValue.value = "panhacoder168@gmail.com";
+            defaultValue.style.borderColor = '#99c3f7';
         });
     </script>
 </body>
