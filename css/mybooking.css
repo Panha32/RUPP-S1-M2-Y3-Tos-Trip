@@ -1,0 +1,41 @@
+.mybooking .card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 1px solid #e0e0e0 !important;
+  transition: all 0.4s ease-in-out;
+}
+.mybooking .card:hover {
+  border: 1px solid #99c3f7;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.mybooking .card .thumbnail {
+  height: 180px;
+}
+
+.mybooking .card .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.mybooking .card .thumbnail img:hover {
+  transform: scale(1.03);
+}
+
+.mybooking .card .rating .star {
+  font-size: 18px;
+}
+
+.mybooking .card .secondary-button {
+  font-size: 14px;
+}
+
+.mybooking .card .list-group-flush,
+.mybooking .card .days {
+  color: #4f4f4f;
+}
+
+.history .card .image {
+    height: 200px;
+}

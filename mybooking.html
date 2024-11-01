@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="plugin/swipper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/mybooking.css">
 </head>
 <body>
     <header class="header-landing header-home position-sticky top-0 bg-white z-3">
         <nav class="navbar pb-0">
             <div class="container px-0">
                 <div class="w-100 d-flex justify-content-between">
-                    <a class="navbar-brand p-0" href="#">
+                    <a class="navbar-brand p-0" href="homepage.html">
                         <img src="img/logo/tostrip.png" class="logo-image" alt="Tos Trip Logo">
                     </a>
                     <div class="wrapper-button d-flex align-items-center gap-4">
-                        <a class="text-decoration-none btn btn-outline-primary py-0 rounded-1" href="#">
+                        <a class="text-decoration-none btn btn-outline-primary py-0 rounded-1" href="mybooking.html">
                             My Bookings
                         </a>
                         <i class="fa-regular fa-circle-question"></i>
@@ -142,7 +143,123 @@
         </nav>
     </header>
 
-    <main style="height: 800px;"></main>
+    <main>
+        <section class="mybooking py-5 mb-5">
+            <div class="container pb-5">
+                <div class="row justify-content-center">
+                    <div class="col-9">
+                        <div class="title-section mb-4 animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                            <h3>My Bookings</h3>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="card p-2 border-0">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="thumbnail rounded-1 overflow-hidden">
+                                        <img src="img/place_detail/card-3.png" alt="...">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body h-100 d-flex justify-content-between align-items-stretch p-0 px-2 ps-3 mx-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">
+                                                <a href="#" class="text-decoration-none text-dark">Harmony Phnom Penh Hotel</a>
+                                            </h5>
+                                            <div class="rating text-warning my-2">
+                                                <span class="star">&starf;&starf;&starf;&starf;&star; </span>
+                                                <span class="small text-secondary">4.0(1200 Reviews)</span>
+                                            </div>
+                                            <p class="text-danger small mb-2">Non refundable</p>
+                                            <ul class="list-group-flush p-0 m-0 mt-2 small">
+                                                <li class="list-group-item mb-2">
+                                                    <span>Check in: </span>
+                                                    <span>Wednesday, 6 November, 2024</span>
+                                                </li>
+                                                <li class="list-group-item mb-2">
+                                                    <span>Check out: </span>
+                                                    <span>Saturday, 9 November, 2024</span>
+                                                </li>
+                                            </ul>
+                                            <span class="small days">3 days stay</span>
+                                        </div>
+                                        <div class="cost d-flex flex-column align-items-end justify-content-end">
+                                            <span class="small text-secondary mt-1">1 room & 3 days</span>
+                                            <span class="price fs-4 fw-medium my-1">$158.52</span>
+                                            <span class="small text-secondary">Includes taxes and fees</span>
+                                            <a href="#" class="btn secondary-button py-1 mt-2 rounded-1">View booking detail</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="history py-5">
+            <div class="container pt-5 mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <div class="title-section mb-4 animate__animated wow animate__fadeIn animate__slow animate__delay-1s">
+                            <h4>Based on your history</h4>
+                            <span class="text-secondary">
+                                Explore Properties Carefully Curated to Match Your Unique Preferences, Individual Taste, and Rich Travel History for an Unforgettable Experience.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card rounded-1 border-0">
+                            <a href="search_result.html" class="stretched-link"></a>
+                            <div class="image rounded-1 overflow-hidden">
+                                <img src="img/mybooking/siemreap.png" class="w-100 h-100" alt="">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title mb-1">Siem Reap</h5>
+                                <span class="text-secondary">246 properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card rounded-1 border-0">
+                            <a href="search_result.html" class="stretched-link"></a>
+                            <div class="image rounded-1 overflow-hidden">
+                                <img src="img/mybooking/phnompenh.png" class="w-100 h-100" alt="">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title mb-1">Phnom Penh</h5>
+                                <span class="text-secondary">278 properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card rounded-1 border-0">
+                            <a href="search_result.html" class="stretched-link"></a>
+                            <div class="image rounded-1 overflow-hidden">
+                                <img src="img/mybooking/kohkong.png" class="w-100 h-100" alt="">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title mb-1">Koh Kong</h5>
+                                <span class="text-secondary">128 properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card rounded-1 border-0">
+                            <a href="search_result.html" class="stretched-link"></a>
+                            <div class="image rounded-1 overflow-hidden">
+                                <img src="img/mybooking/kep.png" class="w-100 h-100" alt="">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title mb-1">Kep</h5>
+                                <span class="text-secondary">50 properties</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer mt-5">
         <div class="top-footer py-5 d-flex flex-column align-items-center">
