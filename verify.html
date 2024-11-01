@@ -33,18 +33,18 @@
                 d-flex justify-content-center align-items-center">
                     <form action="" class="w-100 px-5">
                         <h2 class="text-center text-primary mb-0">Verify you are human</h2>
-                        <p class="text-center my-4 py-1 pb-2">Complete the verification to ensure security. Let's keep our platform safe.</p>
+                        <p class="text-center my-4 py-1 pb-2">Enter the verification code sent to your email to ensure security.</p>
                         <div class="mx-3">
                             <div class="d-flex gap-1 justify-content-center">
                                 <input class="form-control rounded-circle text-center" id="first" type="text" placeholder="" aria-label="">
                                 <input class="form-control rounded-circle text-center" id="second" type="text" placeholder="" aria-label="">
                                 <input class="form-control rounded-circle text-center" id="third" type="text" placeholder="" aria-label="">
-                                <input class="form-control rounded-circle text-center" id="fourth" type="text" placeholder="" aria-label="">
+                                <input class="form-control rounded-circle text-center" id="fouth" type="text" placeholder="" aria-label="">
                                 <input class="form-control rounded-circle text-center" id="fifth" type="text" placeholder="" aria-label="">
                                 <input class="form-control rounded-circle text-center" id="sixth" type="text" placeholder="" aria-label="">
                             </div>
                             <span class="d-block mt-3 mb-5 pb-5 active-time text-center">Active period code 1:59</span>
-                            <a href="homepage.html" class="btn btn-login mt-5 w-100 rounded-pill text-light">Log in</a>
+                            <button onclick="verify()" class="btn btn-login mt-5 w-100 rounded-pill text-light">Log in</button>
                         </div>
                     </form>
                 </div>
@@ -53,5 +53,30 @@
     </div>
     
     <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+        const form_control = [
+            document.getElementById('first'),
+            document.getElementById('second'),
+            document.getElementById('third'),
+            document.getElementById('fouth'),
+            document.getElementById('fifth'),
+            document.getElementById('sixth')
+        ]
+
+        let verify = () => {
+            event.preventDefault();
+            let code = true;
+            form_control.forEach(input => {
+                if(input.value === '') {
+                    code = false;
+                }
+            })
+            if(!code) {
+                alert("Please enter security code");
+                return;
+            }
+            location.href = 'homepage.html';
+        }
+    </script>
 </body>
 </html>
