@@ -80,7 +80,9 @@
         let login = () => {
             if(email.value === '' || password.value === '') {
                 alert("Please fill out all required fields to log in to your account!");
-                return;
+                email.style.borderColor = 'red';
+                password.style.borderColor = 'red';
+                // return;
             }
             else {
                 location.href = 'homepage.html';

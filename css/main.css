@@ -65,6 +65,10 @@ body {
     width: 180px !important;
 }
 
+.nav-link {
+    cursor: pointer;
+}
+
 /* ===== style navbar in landing-page ===== */
 .header-landing {
     font-family: "Roboto Mono", monospace;

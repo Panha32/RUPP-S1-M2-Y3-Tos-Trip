@@ -51,17 +51,27 @@
     padding: 4px 24px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    transition: all 0.5s ease-in;
+    transition: all 0.3s ease-in;
+}
+.hero-banner .search .nav .nav-item .nav-link {
+    pointer-events: none;
 }
 .hero-banner .search .nav .nav-item i {
     color: var(--main-color);
     font-size: 14px;
 }
 .hero-banner .search .nav .nav-item:first-child {
+    order: 2;
+}
+.hero-banner .search .nav .nav-item:nth-child(2) {
     border-bottom-left-radius: 0;
+    order: 1;
+}
+.hero-banner .search .nav .nav-item:nth-child(3) {
+    order: 3;
 }
 .hero-banner .search .nav .nav-item:hover {
-    color: var(--text-white);
+    cursor: pointer;
     background-color: var(--primary-btn-hover);
 }
 .hero-banner .search .nav .nav-item:hover i,
