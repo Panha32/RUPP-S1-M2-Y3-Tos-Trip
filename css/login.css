@@ -17,38 +17,65 @@
     color: #9a9999;
 }
 
-.form-control {
-    padding: 6px 16px;
-    border: 1px solid #d27f135e;
-}
-.form-control:focus {
-    border: 1px solid var(--main-color);
-}
-.form-label {
-    color: #9a9999;
-    top: 50%;
-    left: 32px;
-    font-size: 14px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-.form-control:focus + .form-label,
-.form-control:not(:placeholder-shown) + .form-label {
-    top: 0;
-    left: 24px;
-    font-size: 13px;
-    color: var(--main-color);
-    background: var(--text-white);
-    padding: 0 6px;
+.makeAccount .form-control {
+    padding: 6px 23px;
 }
 
-.btn-login {
-    background-color: var(--primary-btn);
-    transition: all 0.3s ease;
+.makeAccount .form-label {
+    left: 23px;
+    font-size: 14px;
 }
-.btn-login:hover {
-    background-color: var(--primary-btn-hover);
+.makeAccount .form-control:focus + .form-label,
+.makeAccount .form-control:not(:placeholder-shown) + .form-label {
+    left: 21px;
+    font-size: 10px;
+}
+
+.makeAccount .form-check-input,
+.makeAccount .form-check-label {
+    cursor: pointer;
+}
+
+.makeAccount .openPw {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 23px;
+}
+.makeAccount .form-check-input:focus {
+    border-color: #ddd;
+}
+
+.makeAccount #rememberMe {
+    border-color: #99c3f7;
+}
+
+.makeAccount .forgot-pw:hover small {
+    color: var(--main-color) !important;
+    text-decoration: underline !important;
+}
+
+.makeAccount .pw-random {
+    right: 0;
+    bottom: -40px;
+    z-index: 2;
+}
+
+.makeAccount .pw-random button{
+    display: none;
+    font-size: 14px;
+    background-color: #f6e691;
+}
+
+.makeAccount .pw-random button::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f6e691;
+    top: -24%;
+    transform: rotate(45deg);
+    right: 50px;
+    z-index: -1;
 }
 
 .other-way::before,

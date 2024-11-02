@@ -13,14 +13,14 @@
 </head>
 <body>
 
-    <div class="container-fluid p-3" style="background-image: url(img/register.jpg);">
+    <div class="container-fluid p-3 makeAccount animate__animated animate__fadeIn" style="background-image: url(img/register.jpg);">
         <div class="row h-100">
             <div class="col-7">
                 <div class="h-100 p-5 d-flex flex-column justify-content-between text-light">
                     <a href="index.html">
                         <img src="img/logo/tostrip-no-bg.png" class="logo-image" alt="Tos Trip Official Logo">
                     </a>
-                    <div class="text">
+                    <div class="text animate__animated animate__fadeInLeft">
                         <h3>Angkor Wat Temple</h3>
                         <p class="w-75 small mb-0">
                             "Step into the world's largest religious monument, a timeless symbol of Cambodia's cultural heritage."
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-5">
+            <div class="col-5 animate__animated animate__fadeInRight">
                 <div class="h-100 bg-light rounded-2 px-5 login-form
                 d-flex justify-content-center align-items-center">
                     <form action="" class="w-100 px-5">
@@ -36,33 +36,30 @@
                         <p class="text-center my-4 py-1 pb-2">Create an account to unlock possibilities and start your adventure today.</p>
                         <div class="mx-3">
                             <div>
-                                <div class="w-100 mb-3 position-relative">
+                                <div class="w-100 mb-3 group position-relative">
                                     <input class="form-control w-100 rounded-pill" id="name" type="name" placeholder="" aria-label="">
                                     <label for="name" class="form-label position-absolute">
                                         Enter your full name
                                     </label>
                                 </div>
-                                <span class="small text-danger ms-3 d-none mb-2 mt-1">Invalid</span>
                             </div>
                             <div>
-                                <div class="w-100 mb-3 position-relative">
+                                <div class="w-100 mb-3 group position-relative">
                                     <input class="form-control w-100 rounded-pill" id="email" type="email" placeholder="" aria-label="">
                                     <label for="email" class="form-label position-absolute">
                                         Enter your email
                                     </label>
                                 </div>
-                                <span class="small text-danger ms-3 d-none mb-2 mt-1">Invalid</span>
                             </div>
                             <div>
-                                <div class="w-100 position-relative">
+                                <div class="w-100 group position-relative">
                                     <input class="form-control w-100 rounded-pill" id="password" type="password" placeholder="" aria-label="">
                                     <label for="password" class="form-label position-absolute">
                                         Enter your password
                                     </label>
                                 </div>
-                                <span class="small text-danger ms-3 d-none mb-2 mt-1">Invalid</span>
                             </div>
-                            <button onclick="register()" class="btn btn-login my-4 w-100 rounded-pill text-light">Register</button>
+                            <button onclick="register()" class="btn secondary-button my-4 w-100 rounded-pill text-light">Register</button>
                             <span class="w-100 d-block other-way text-center position-relative">or</span>
                             <span class="text-center d-block my-4">Already have an account? 
                                 <a href="login-page.html">Log In</a>

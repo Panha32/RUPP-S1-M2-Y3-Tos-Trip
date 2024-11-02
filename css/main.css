@@ -61,6 +61,10 @@ body {
     color: var(--text-white);
 }
 
+/* .borderError {
+    border-color: #f62e2e98;
+} */
+
 .logo-image {
     width: 180px !important;
 }

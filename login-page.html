@@ -13,14 +13,14 @@
 </head>
 <body>
 
-    <div class="container-fluid p-3" style="background-image: url(img/login-bg.png);">
+    <div class="container-fluid makeAccount p-3 animate__animated animate__fadeIn" style="background-image: url(img/login-bg.png);">
         <div class="row h-100">
             <div class="col-7">
                 <div class="h-100 p-5 d-flex flex-column justify-content-between text-light">
                     <a href="index.html">
                         <img src="img/logo/tostrip-no-bg.png" class="logo-image" alt="Tos Trip Official Logo">
                     </a>
-                    <div class="text">
+                    <div class="text animate__animated animate__fadeInLeft">
                         <h3>Angkor Wat Temple</h3>
                         <p class="w-75 small mb-0">
                             "The iconic heart of Cambodia, Angkor Wat is the world's largest religious monument, symbolizing ancient grandeur and timeless beauty."
@@ -28,31 +28,42 @@
                     </div>
                 </div>
             </div>
-            <div class="col-5">
+            <div class="col-5 animate__animated animate__fadeInRight">
                 <div class="h-100 bg-light rounded-2 px-5 login-form d-flex justify-content-center align-items-center">
                     <form action="" class="w-100 px-5">
                         <h2 class="text-center text-primary mb-0">Welcome back</h2>
                         <p class="text-center my-4 py-1 pb-2">Sign in to continue your journey and access exclusive features with new experiences.</p>
-                        <div class="mx-3">
+                        <div>
                             <div>
-                                <div class="w-100 mb-3 position-relative">
-                                    <input class="form-control w-100 rounded-pill" id="email" type="email" placeholder="" aria-label="">
-                                    <label for="email" class="form-label position-absolute">
+                                <div class="w-100 mb-3 group position-relative">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkEmail()" id="email" type="email" placeholder="" aria-label="">
+                                    <label for="email" id="lblEmail" class="form-label position-absolute">
                                         Enter your email
                                     </label>
                                 </div>
-                                <span class="small text-danger ms-3 d-none mb-2 mt-1">Invalid</span>
                             </div>
                             <div>
-                                <div class="w-100 position-relative">
-                                    <input class="form-control w-100 rounded-pill" id="password" type="password" placeholder="" aria-label="">
-                                    <label for="password" class="form-label position-absolute">
+                                <div class="w-100 mb-2 group position-relative">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkPassword()" id="password" type="password" placeholder="" aria-label="">
+                                    <label for="password" id="lblPassword" class="form-label position-absolute">
                                         Enter your password
                                     </label>
+                                    <input class="form-check-input openPw position-absolute m-0" onclick="showPw()" type="checkbox" value="" id="openPw">
+                                    <div class="position-absolute pw-random">
+                                        <button id="pw-random" onclick="getRandomPw()" class="btn rounded-0 py-1">Suggest password: 12!242qfsn2@</button>
+                                    </div>
                                 </div>
-                                <span class="small text-danger ms-3 d-none mb-2 mt-1">Invalid</span>
                             </div>
-                            <button onclick="login()" class="btn btn-login my-4 w-100 rounded-pill text-light">Log in</button>
+                            <div class="d-flex justify-content-between pt-1 px-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                                    <label class="form-check-label text-secondary small opacity-75" for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="text-decoration-none forgot-pw">
+                                    <small class="text-secondary opacity-75">Forgot password</small>
+                                </a>
+                            </div>
+                            <button onclick="login()" class="btn secondary-button my-4 w-100 rounded-pill text-light">Log in</button>
                             <span class="w-100 d-block other-way text-center position-relative">or</span>
                             <span class="text-center d-block my-4">Don't have an account? 
                                 <a href="Register-Page.html">Create Account</a>
@@ -76,16 +87,99 @@
     <script>
         let email = document.getElementById('email');
         let password = document.getElementById('password');
+        let lblEmail = document.getElementById('lblEmail');
+        let lblPassword = document.getElementById('lblPassword');
+        let openPw = document.getElementById('openPw');
+        let pw_random = document.getElementById('pw-random');
 
         let login = () => {
+            event.preventDefault();
             if(email.value === '' || password.value === '') {
-                alert("Please fill out all required fields to log in to your account!");
-                email.style.borderColor = 'red';
-                password.style.borderColor = 'red';
-                // return;
+                alert("Please ensure all required fields are filled out correctly before logging in. Thank you!");
+                if (email.value === '') {
+                    email.style.borderColor = 'var(--errors)';
+                }
+                else {
+                    email.style.borderColor = '';
+                    lblEmail.style.color = '#9a9999';
+                }
+
+                if (password.value === '') {
+                    password.style.borderColor = 'var(--errors)';
+                }
+                else {
+                    password.style.borderColor = '';
+                    lblPassword.style.color = '#9a9999';
+                }
+                return;
             }
             else {
                 location.href = 'homepage.html';
+            }
+        }
+
+        const checkEmail = () => {
+            let emailcheck = email.value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!emailPattern.test(emailcheck) && emailcheck !== '') {
+                email.style.borderColor = 'var(--errors)';
+            }
+            else {
+                email.style.borderColor = '';
+            }
+        }
+
+        let passwordSuggested = false;
+
+        const generatePassword = () => {
+            const length = 12;
+            const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@$!%*?&';
+            let pwGenerated = '';
+            for(let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                pwGenerated += charset[randomIndex];
+            }
+            return pwGenerated;
+        }
+
+        password.addEventListener('focus', () => {
+            if (!passwordSuggested && password.value === '') {
+                const randomPw = generatePassword();
+                pw_random.style.display = 'block';
+                pw_random.innerHTML = `Suggest password: ${randomPw}`;
+                sessionStorage.setItem('password', randomPw);
+                passwordSuggested = true; 
+            }
+        })
+
+        const getRandomPw = () => {
+            event.preventDefault();
+            password.value = sessionStorage.getItem('password');
+            pw_random.style.display = 'none';
+        }
+
+
+
+        const checkPassword = () => {
+            let passwordcheck = password.value;
+            const passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if(!passwordpattern.test(passwordcheck) && passwordcheck !== '') {
+                password.style.borderColor = 'var(--errors)';
+                lblPassword.style.color = 'var(--errors)';
+                pw_random.style.display = 'none';
+            }
+            else {
+                password.style.borderColor = '';
+                lblPassword.style.color = '';
+            }
+        }
+
+        const showPw = () => {
+            if(openPw.checked == true) {
+                password.type = 'text';
+            }
+            else {
+                password.type = 'password';
             }
         }
     </script>
