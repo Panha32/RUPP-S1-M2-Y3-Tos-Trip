@@ -37,26 +37,30 @@
                         <div class="mx-3">
                             <div>
                                 <div class="w-100 mb-3 group position-relative">
-                                    <input class="form-control w-100 rounded-pill" id="name" type="name" placeholder="" aria-label="">
-                                    <label for="name" class="form-label position-absolute">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkName()" id="name" type="text" placeholder="" aria-label="">
+                                    <label for="name" id="lblName" class="form-label position-absolute">
                                         Enter your full name
                                     </label>
                                 </div>
                             </div>
                             <div>
                                 <div class="w-100 mb-3 group position-relative">
-                                    <input class="form-control w-100 rounded-pill" id="email" type="email" placeholder="" aria-label="">
-                                    <label for="email" class="form-label position-absolute">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkEmail()" id="email" type="email" placeholder="" aria-label="">
+                                    <label for="email" id="lblEmail" class="form-label position-absolute">
                                         Enter your email
                                     </label>
                                 </div>
                             </div>
                             <div>
                                 <div class="w-100 group position-relative">
-                                    <input class="form-control w-100 rounded-pill" id="password" type="password" placeholder="" aria-label="">
-                                    <label for="password" class="form-label position-absolute">
-                                        Enter your password
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkPassword()" id="password" type="password" placeholder="" aria-label="">
+                                    <label for="password" id="lblPassword" class="form-label position-absolute">
+                                        Create your password
                                     </label>
+                                    <input class="form-check-input openPw position-absolute m-0" onclick="showPw()" type="checkbox" value="" id="openPw">
+                                    <div class="position-absolute pw-random">
+                                        <button id="pw-random" onclick="getRandomPw()" class="btn rounded-0 py-1"></button>
+                                    </div>
                                 </div>
                             </div>
                             <button onclick="register()" class="btn secondary-button my-4 w-100 rounded-pill text-light">Register</button>
@@ -80,20 +84,6 @@
     </div>
     
     <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
-    <script>
-        let name = document.getElementById('name');
-        let email = document.getElementById('email');
-        let password = document.getElementById('password');
-
-        let register = () => {
-            if(email.value === '' || password.value === '' || name.value === '') {
-                alert("Please fill out all required fields to log in to your account!");
-                return;
-            }
-            else {
-                location.href = 'verify.html';
-            }
-        }
-    </script>
+    <script src="js/login_register_script.js"></script>
 </body>
 </html>

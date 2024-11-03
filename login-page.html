@@ -49,9 +49,6 @@
                                         Enter your password
                                     </label>
                                     <input class="form-check-input openPw position-absolute m-0" onclick="showPw()" type="checkbox" value="" id="openPw">
-                                    <div class="position-absolute pw-random">
-                                        <button id="pw-random" onclick="getRandomPw()" class="btn rounded-0 py-1">Suggest password: 12!242qfsn2@</button>
-                                    </div>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between pt-1 px-2">
@@ -84,104 +81,6 @@
     </div>
     
     <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
-    <script>
-        let email = document.getElementById('email');
-        let password = document.getElementById('password');
-        let lblEmail = document.getElementById('lblEmail');
-        let lblPassword = document.getElementById('lblPassword');
-        let openPw = document.getElementById('openPw');
-        let pw_random = document.getElementById('pw-random');
-
-        let login = () => {
-            event.preventDefault();
-            if(email.value === '' || password.value === '') {
-                alert("Please ensure all required fields are filled out correctly before logging in. Thank you!");
-                if (email.value === '') {
-                    email.style.borderColor = 'var(--errors)';
-                }
-                else {
-                    email.style.borderColor = '';
-                    lblEmail.style.color = '#9a9999';
-                }
-
-                if (password.value === '') {
-                    password.style.borderColor = 'var(--errors)';
-                }
-                else {
-                    password.style.borderColor = '';
-                    lblPassword.style.color = '#9a9999';
-                }
-                return;
-            }
-            else {
-                location.href = 'homepage.html';
-            }
-        }
-
-        const checkEmail = () => {
-            let emailcheck = email.value;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if(!emailPattern.test(emailcheck) && emailcheck !== '') {
-                email.style.borderColor = 'var(--errors)';
-            }
-            else {
-                email.style.borderColor = '';
-            }
-        }
-
-        let passwordSuggested = false;
-
-        const generatePassword = () => {
-            const length = 12;
-            const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@$!%*?&';
-            let pwGenerated = '';
-            for(let i = 0; i < length; i++) {
-                const randomIndex = Math.floor(Math.random() * charset.length);
-                pwGenerated += charset[randomIndex];
-            }
-            return pwGenerated;
-        }
-
-        password.addEventListener('focus', () => {
-            if (!passwordSuggested && password.value === '') {
-                const randomPw = generatePassword();
-                pw_random.style.display = 'block';
-                pw_random.innerHTML = `Suggest password: ${randomPw}`;
-                sessionStorage.setItem('password', randomPw);
-                passwordSuggested = true; 
-            }
-        })
-
-        const getRandomPw = () => {
-            event.preventDefault();
-            password.value = sessionStorage.getItem('password');
-            pw_random.style.display = 'none';
-        }
-
-
-
-        const checkPassword = () => {
-            let passwordcheck = password.value;
-            const passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-            if(!passwordpattern.test(passwordcheck) && passwordcheck !== '') {
-                password.style.borderColor = 'var(--errors)';
-                lblPassword.style.color = 'var(--errors)';
-                pw_random.style.display = 'none';
-            }
-            else {
-                password.style.borderColor = '';
-                lblPassword.style.color = '';
-            }
-        }
-
-        const showPw = () => {
-            if(openPw.checked == true) {
-                password.type = 'text';
-            }
-            else {
-                password.type = 'password';
-            }
-        }
-    </script>
+    <script src="js/login_register_script.js"></script>
 </body>
 </html>
