@@ -121,7 +121,7 @@ const checkPassword = () => {
     }
     else {
         password.style.borderColor = '';
-        lblPassword.style.color = '';
+        lblPassword.style.color = 'var(--main-color)';
         isPasswordValid = true;
     }
     return isPasswordValid;
