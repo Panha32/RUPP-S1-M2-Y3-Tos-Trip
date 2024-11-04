@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="plugin/swipper/swiper-bundle.min.css">
     <link rel="stylesheet" href="plugin/rangeSlider/om-javascript-range-slider.css">
+    <link rel="stylesheet" href="plugin/flatpickr/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -151,44 +152,46 @@
                     <div class="col-9 bg-light p-3 rounded-2 animate__animated wow animate__fadeIn">
                         <div class="row g-2">
                             <div class="col-10">
-                                <div class="row g-2">
-                                    <div class="col-4">
-                                        <div class="group position-relative">
-                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
-                                            <label for="location" class="form-label position-absolute">
-                                                <i class="fa-solid fa-location-dot"></i>
-                                                Location
-                                            </label>
+                                <form action="">
+                                    <div class="row g-2">
+                                        <div class="col-4">
+                                            <div class="group position-relative">
+                                                <input class="form-control" id="location" type="text" placeholder="" aria-label="">
+                                                <label for="location" class="form-label position-absolute">
+                                                    <i class="fa-solid fa-location-dot"></i>
+                                                    Location
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="group position-relative">
+                                                <input class="form-control" id="checkIn" type="text" placeholder="" aria-label="">
+                                                <label for="checkIn" class="form-label position-absolute">
+                                                    <i class="fa-regular fa-calendar-check"></i>
+                                                    Check In
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="group position-relative">
+                                                <input class="form-control" id="checkOut" type="text" placeholder="" aria-label="">
+                                                <label for="checkOut" class="form-label position-absolute">
+                                                    <i class="fa-regular fa-calendar-xmark"></i>
+                                                    Check Out
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="group position-relative">
+                                                <input class="form-control" id="person" type="text" placeholder="" aria-label="">
+                                                <label for="person" class="form-label position-absolute">
+                                                    <i class="fa-solid fa-user"></i>
+                                                    Person
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-3">
-                                        <div class="group position-relative">
-                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
-                                            <label for="checkIn" class="form-label position-absolute">
-                                                <i class="fa-regular fa-calendar-check"></i>
-                                                Check In
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="group position-relative">
-                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
-                                            <label for="checkOut" class="form-label position-absolute">
-                                                <i class="fa-regular fa-calendar-xmark"></i>
-                                                Check Out
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="group position-relative">
-                                            <input class="form-control" id="location" type="text" placeholder="" aria-label="">
-                                            <label for="person" class="form-label position-absolute">
-                                                <i class="fa-solid fa-user"></i>
-                                                Person
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="col-2">
                                 <button class="btn btn-search secondary-button rounded-1 py-1 w-100">Search</button>
@@ -928,8 +931,11 @@
 
     <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="plugin/rangeSlider/om-javascript-range-slider.js"></script>
+    <script src="plugin/flatpickr/flatpickr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/dropdown.js"></script>
+    <script src="js/date.js"></script>
     <script>
         new WOW().init();
 

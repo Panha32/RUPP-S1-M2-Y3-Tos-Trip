@@ -1,9 +1,3 @@
-const gotoSearch = (link) => {
-    let linkLocation = link.textContent;
-    sessionStorage.setItem("linkText", linkLocation);
-    location.href = 'search_result.html';
-}
-
 let fullname = document.getElementById('name');
 let email = document.getElementById('email');
 let password = document.getElementById('password');
