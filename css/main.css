@@ -61,10 +61,6 @@ body {
     color: var(--text-white);
 }
 
-/* .borderError {
-    border-color: #f62e2e98;
-} */
-
 .logo-image {
     width: 180px !important;
 }
@@ -80,7 +76,6 @@ body {
 header .navbar .navbar-nav::-webkit-scrollbar {
     display: none;
 }
-
 .header-landing .navbar .btn-support {
     color: var(--secondary-btn);
 }
@@ -129,7 +124,6 @@ header .navbar .navbar-nav::-webkit-scrollbar {
     border: 1px solid #99c3f7;
     border-radius: 3px;
 }
-
 .group .form-control:focus {
     border: 1px solid var(--main-color);
 }
@@ -141,7 +135,6 @@ header .navbar .navbar-nav::-webkit-scrollbar {
     pointer-events: none;
     transition: all 0.3s ease;
 }
-
 .group .form-control:focus + .form-label,
 .group .form-control:not(:placeholder-shown) + .form-label {
     top: 0;
@@ -159,7 +152,6 @@ header .navbar .navbar-nav::-webkit-scrollbar {
     color: var(--sub-text);
     background-color: #1a2651;
 }
-
 .footer .top-footer .social-icon {
     width: 35px;
     height: 35px;
@@ -198,7 +190,6 @@ header .navbar .navbar-nav::-webkit-scrollbar {
     position: absolute;
     z-index: 3;
 }
-
 .footer .top-footer a {
     color: var(--sub-text);
     transition: all 0.2s ease-in;
