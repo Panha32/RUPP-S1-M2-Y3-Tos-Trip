@@ -37,7 +37,7 @@
                         <div class="mx-3">
                             <div>
                                 <div class="w-100 mb-3 group position-relative">
-                                    <input class="form-control w-100 rounded-pill" onkeyup="checkName()" id="name" type="text" placeholder="" aria-label="">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkName()" id="name" type="text" placeholder="" autocomplete="off">
                                     <label for="name" id="lblName" class="form-label position-absolute">
                                         Enter your full name
                                     </label>
@@ -45,7 +45,7 @@
                             </div>
                             <div>
                                 <div class="w-100 mb-3 group position-relative">
-                                    <input class="form-control w-100 rounded-pill" onkeyup="checkEmail()" id="email" type="email" placeholder="" aria-label="">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkEmail()" id="email" type="email" placeholder="" autocomplete="off">
                                     <label for="email" id="lblEmail" class="form-label position-absolute">
                                         Enter your email
                                     </label>
@@ -53,7 +53,7 @@
                             </div>
                             <div>
                                 <div class="w-100 group position-relative">
-                                    <input class="form-control w-100 rounded-pill" onkeyup="checkPassword()" id="password" type="password" placeholder="" aria-label="">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkPassword()" id="password" type="password" placeholder="">
                                     <label for="password" id="lblPassword" class="form-label position-absolute">
                                         Create your password
                                     </label>
@@ -63,7 +63,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <button onclick="register()" class="btn secondary-button my-4 w-100 rounded-pill text-light">Register</button>
+                            <button onclick="register()" id="registerBtn" class="btn secondary-button my-4 w-100 rounded-pill text-light">
+                                <span class="button-text">Register</span>
+                            </button>
                             <span class="w-100 d-block other-way text-center position-relative">or</span>
                             <span class="text-center d-block my-4">Already have an account? 
                                 <a href="login-page.html">Log In</a>

@@ -36,6 +36,13 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+.hover-underline:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
 .form-check-input:focus,
 .form-control:focus {
     box-shadow: none;
@@ -59,6 +66,34 @@ body {
 .secondary-button:hover {
     background-color: var(--secondary-btn-hover);
     color: var(--text-white);
+}
+
+.secondary-button.loading {
+    pointer-events: none;
+    position: relative;
+}
+.secondary-button.loading .button-text {
+    visibility: hidden !important;
+}
+.secondary-button.loading::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #fff;
+    border-top: 3px solid var(--main-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.secondary-button:disabled {
+    background-color: var(--secondary-btn-disabled) !important;
 }
 
 .logo-image {
@@ -127,6 +162,11 @@ header .navbar .navbar-nav::-webkit-scrollbar {
 .group .form-control:focus {
     border: 1px solid var(--main-color);
 }
+.group .form-control:disabled {
+    color: #aab0b6 !important;
+    background-color: transparent !important;
+    border: 1px solid #dde9fc !important;
+}
 .group .form-label {
     color: #9a9999;
     top: 50%;
@@ -144,6 +184,23 @@ header .navbar .navbar-nav::-webkit-scrollbar {
     color: var(--main-color);
     background: var(--text-white);
     padding: 0 6px;
+}
+
+.group .form-control:disabled + .form-label,
+.group .form-control:disabled:not(:placeholder-shown) + .form-label {
+    color: #aab0b6 !important;
+}
+/* ===== style for alertSMS ===== */
+.alertSMS {
+    width: 95%;
+    color: var(--errors);
+    border: 1px solid var(--errors);
+    background-color: #ffdfdf;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in;
+    opacity: 0;
 }
 
 /* ===== style for footer ===== */

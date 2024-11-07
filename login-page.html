@@ -29,14 +29,17 @@
                 </div>
             </div>
             <div class="col-5 animate__animated animate__fadeInRight">
-                <div class="h-100 bg-light rounded-2 px-5 login-form d-flex justify-content-center align-items-center">
+                <div class="h-100 bg-light rounded-2 px-5 login-form d-flex justify-content-center align-items-center position-relative">
+                    <div id="alertSms" class="alertSMS position-absolute py-2 rounded-1 text-center">
+                        Please fill out all required fields before logging in !
+                    </div>
                     <form action="" class="w-100 px-5">
                         <h2 class="text-center text-primary mb-0">Welcome back</h2>
                         <p class="text-center my-4 py-1 pb-2">Sign in to continue your journey and access exclusive features with new experiences.</p>
                         <div>
                             <div>
                                 <div class="w-100 mb-3 group position-relative">
-                                    <input class="form-control w-100 rounded-pill" onkeyup="checkEmail()" id="email" type="email" placeholder="" aria-label="">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkEmail()" id="email" type="email" placeholder="" autocomplete="off">
                                     <label for="email" id="lblEmail" class="form-label position-absolute">
                                         Enter your email
                                     </label>
@@ -44,7 +47,7 @@
                             </div>
                             <div>
                                 <div class="w-100 mb-2 group position-relative">
-                                    <input class="form-control w-100 rounded-pill" onkeyup="checkPassword()" id="password" type="password" placeholder="" aria-label="">
+                                    <input class="form-control w-100 rounded-pill" onkeyup="checkPassword()" id="password" type="password" placeholder="">
                                     <label for="password" id="lblPassword" class="form-label position-absolute">
                                         Enter your password
                                     </label>
@@ -60,7 +63,9 @@
                                     <small class="text-secondary opacity-75">Forgot password</small>
                                 </a>
                             </div>
-                            <button onclick="login()" class="btn secondary-button my-4 w-100 rounded-pill text-light">Log in</button>
+                            <button onclick="login()" id="loginBtn" class="btn secondary-button my-4 w-100 rounded-pill text-light">
+                                <span class="button-text">Log in</span>
+                            </button>
                             <span class="w-100 d-block other-way text-center position-relative">or</span>
                             <span class="text-center d-block my-4">Don't have an account? 
                                 <a href="Register-Page.html">Create Account</a>

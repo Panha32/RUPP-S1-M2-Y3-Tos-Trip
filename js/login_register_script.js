@@ -7,6 +7,11 @@ let lblPassword = document.getElementById('lblPassword');
 let openPw = document.getElementById('openPw');
 let pw_random = document.getElementById('pw-random');
 
+let alertSMS = document.getElementById('alertSms');
+
+const loginBtn = document.getElementById('loginBtn');
+const registerBtn = document.getElementById('registerBtn');
+
 const invalidName = () => {
     if (fullname.value === '') {
         fullname.style.borderColor = 'var(--errors)';
@@ -40,24 +45,19 @@ const invalidPassword = () => {
     }
 }
 
-let isNameValid = false;
 const checkName = () => {
     const nameValid = fullname.value;
     const namePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
     if(!namePattern.test(nameValid) && nameValid !== '') {
         fullname.style.borderColor = 'var(--errors)';
         lblName.style.color = 'var(--errors)';
-        isNameValid = false;
     }
     else {
         fullname.style.borderColor = '';
         lblName.style.color = 'var(--main-color)';
-        isNameValid = true;
     }
-    return isNameValid;
 }
 
-let isEmailValid = false;
 const checkEmail = () => {
     let emailcheck = email.value;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -71,7 +71,6 @@ const checkEmail = () => {
         lblEmail.style.color = 'var(--main-color)';
         isEmailValid = true;
     }
-    return isEmailValid;
 }
 
 let passwordSuggested = false;
@@ -103,7 +102,6 @@ const getRandomPw = () => {
     pw_random.style.display = 'none';
 }
 
-let isPasswordValid = false;
 const checkPassword = () => {
     let passwordcheck = password.value;
     const passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -118,7 +116,6 @@ const checkPassword = () => {
         lblPassword.style.color = 'var(--main-color)';
         isPasswordValid = true;
     }
-    return isPasswordValid;
 }
 
 const showPw = () => {
@@ -133,21 +130,30 @@ const showPw = () => {
 const login = () => {
     event.preventDefault();
     if(email.value === '' || password.value === '') {
-        alert("Please ensure all required fields are filled out correctly before logging in. Thank you!");
-        invalidEmail();
-        invalidPassword();
-        return;
-    }
-
-    checkEmail();
-    checkPassword();
-
-    if(!isEmailValid || !isPasswordValid) {
-        alert("Please ensure all fields meet the required format.");
+        alertSMS.style.opacity = '1';
+        alertSMS.style.top = '20px';
+        setTimeout(() => {
+            alertSMS.style.top = '-10px';
+            alertSMS.style.opacity = '0'
+        }, 2000)
+        setTimeout(() => {
+            invalidEmail();
+            invalidPassword();
+        }, 10000)
         return;
     }
     else {
-        location.href = 'homepage.html';
+        loginBtn.classList.add('loading');
+        loginBtn.disabled = true;
+        email.disabled = true;
+        password.disabled = true;
+        setTimeout(() => {
+            loginBtn.classList.remove('loading');
+            loginBtn.disabled = false;
+            email.disabled = false;
+            password.disabled = false;
+            location.href = 'homepage.html';
+        }, 2000)
     }
 }
 
@@ -160,17 +166,15 @@ let register = () => {
         invalidPassword();
         return;
     }
-
-    checkName()
-    checkEmail();
-    checkPassword();
-
-    if(!isNameValid || !isEmailValid || !isPasswordValid) {
-        alert("Please ensure all fields meet the required format.");
-        return;
-    }
     else {
-        location.href = 'verify.html';
+        registerBtn.classList.add('loading');
+        registerBtn.disabled = true;
+
+        setTimeout(() => {
+            registerBtn.classList.remove('loading');
+            registerBtn.disabled = false;
+            location.href = 'verify.html';
+        }, 2000)
     }
 }
 

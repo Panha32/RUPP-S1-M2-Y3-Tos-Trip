@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login.css">
+    <style>
+        .form-control {
+            border: 1px solid #99c3f7;
+        }
+        .form-control:focus {
+            border: 1px solid var(--main-color);
+        }
+    </style>
 </head>
 <body>
 
@@ -20,7 +28,7 @@
                     <a href="index.html">
                         <img src="img/logo/tostrip-no-bg.png" class="logo-image" alt="Tos Trip Official Logo">
                     </a>
-                    <div class="text animate__animated animate__fadeInRight">
+                    <div class="text animate__animated animate__fadeInLeft">
                         <h3>Srah Srang Temple</h3>
                         <p class="w-75 small mb-0">
                             "Experience the serene beauty of sunrise over the ancient moat of Srah Srang, a peaceful oasis in the heart of Angkor Wat."
@@ -28,23 +36,31 @@
                     </div>
                 </div>
             </div>
-            <div class="col-5 animate__animated animate__fadeInLeft">
+            <div class="col-5 animate__animated animate__fadeInRight">
                 <div class="h-100 bg-light rounded-2 px-5 login-form
-                d-flex justify-content-center align-items-center">
+                d-flex justify-content-center align-items-center position-relative">
+                    <div id="alertSms" class="alertSMS position-absolute py-2 rounded-1 text-center">
+                        Please enter security code
+                    </div>
                     <form action="" class="w-100 px-5">
                         <h2 class="text-center text-primary mb-0">Verify you are human</h2>
                         <p class="text-center my-4 py-1 pb-2">Enter the verification code sent to your email to ensure security.</p>
                         <div class="mx-3">
                             <div class="d-flex gap-1 justify-content-center">
-                                <input class="form-control rounded-circle text-center" id="first" type="text" placeholder="" aria-label="">
-                                <input class="form-control rounded-circle text-center" id="second" type="text" placeholder="" aria-label="">
-                                <input class="form-control rounded-circle text-center" id="third" type="text" placeholder="" aria-label="">
-                                <input class="form-control rounded-circle text-center" id="fouth" type="text" placeholder="" aria-label="">
-                                <input class="form-control rounded-circle text-center" id="fifth" type="text" placeholder="" aria-label="">
-                                <input class="form-control rounded-circle text-center" id="sixth" type="text" placeholder="" aria-label="">
+                                <input class="form-control rounded-circle text-center" id="first" type="text" maxlength="1">
+                                <input class="form-control rounded-circle text-center" id="second" type="text" maxlength="1">
+                                <input class="form-control rounded-circle text-center" id="third" type="text" maxlength="1">
+                                <input class="form-control rounded-circle text-center" id="fouth" type="text" maxlength="1">
+                                <input class="form-control rounded-circle text-center" id="fifth" type="text" maxlength="1">
+                                <input class="form-control rounded-circle text-center" id="sixth" type="text" maxlength="1">
                             </div>
-                            <span class="d-block mt-3 mb-5 pb-5 active-time text-center">Active period code 1:59</span>
-                            <button onclick="verify()" class="btn btn-login mt-5 w-100 rounded-pill text-light">Log in</button>
+                            <div class="mb-5 pb-4">
+                                <span id="timeActive" class="d-block mt-3 active-time text-center"></span>
+                                <span class="d-block text-center text-secondary small mt-2 hover-underline">Resend</span>
+                            </div>
+                            <button onclick="verify()" id="verifyBtn" class="btn secondary-button mt-5 w-100 rounded-pill text-light">
+                                <span class="button-text">Log in</span>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -54,6 +70,8 @@
     
     <script src="plugin/bootstrap/bootstrap.bundle.min.js"></script>
     <script>
+        let alertSMS = document.getElementById('alertSms');
+        const verifyBtn = document.getElementById('verifyBtn');
         const form_control = [
             document.getElementById('first'),
             document.getElementById('second'),
@@ -62,6 +80,17 @@
             document.getElementById('fifth'),
             document.getElementById('sixth')
         ]
+
+        form_control.forEach(input => {
+            input.autocomplete = 'off';
+        })
+        form_control.forEach(element => {
+            element.addEventListener('keyup', () => {
+                if(form_control.indexOf(element) + 1 != form_control.length) {
+                    form_control[form_control.indexOf(element) + 1].focus()
+                }
+            })
+        })
 
         let verify = () => {
             event.preventDefault();
@@ -72,11 +101,42 @@
                 }
             })
             if(!code) {
-                alert("Please enter security code");
+                alertSMS.style.opacity = '1';
+                alertSMS.style.top = '20px';
+                setTimeout(alertsms => {
+                    alertSMS.style.top = '-10px';
+                    alertSMS.style.opacity = '0'
+                }, 5000)
                 return;
             }
-            location.href = 'homepage.html';
+            else {
+                verifyBtn.classList.add('loading');
+                verifyBtn.disabled = true;
+                setTimeout(() => {
+                    verifyBtn.classList.remove('loading');
+                    verifyBtn.disabled = false;
+                    location.href = 'homepage.html';
+                }, 2000)
+            }
         }
+
+        let activeTime = 120;
+        const timeActive = document.getElementById('timeActive');
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+        }
+
+        const countdownInterval = setInterval(() => {
+            timeActive.textContent = `Active period code ${formatTime(activeTime)}`;
+            activeTime--;
+
+            if (activeTime < 0) {
+                clearInterval(countdownInterval);
+                timeActive.textContent = "Active period code 0:00";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
