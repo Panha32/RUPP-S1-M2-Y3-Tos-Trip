@@ -101,11 +101,9 @@
                 }
             })
             if(!code) {
-                alertSMS.style.opacity = '1';
-                alertSMS.style.top = '20px';
+                alertSMS.classList.add('show');
                 setTimeout(alertsms => {
-                    alertSMS.style.top = '-10px';
-                    alertSMS.style.opacity = '0'
+                    alertSMS.classList.remove('show');
                 }, 5000)
                 return;
             }

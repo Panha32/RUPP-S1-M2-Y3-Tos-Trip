@@ -12,64 +12,52 @@ let alertSMS = document.getElementById('alertSms');
 const loginBtn = document.getElementById('loginBtn');
 const registerBtn = document.getElementById('registerBtn');
 
-const invalidName = () => {
-    if (fullname.value === '') {
+let isValidateFullname = false;
+let validateFullname = () => {
+    let fullnameCheck = fullname.value;
+    const fullnamePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+
+    if(fullnameCheck === '' || !fullnamePattern.test(fullnameCheck)) {
         fullname.style.borderColor = 'var(--errors)';
         lblName.style.color = 'var(--errors)';
-    }
-    else {
+        isValidateFullname = false;
+    } else {
         fullname.style.borderColor = '';
         lblName.style.color = 'var(--main-color)';
+        isValidateFullname = true;
     }
 }
 
-const invalidEmail = () => {
-    if (email.value === '') {
+let isValidateEmail = false;
+let validateEmail = () => {
+    let emailCheck = email.value;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(emailCheck === '' || !emailPattern.test(emailCheck)) {
         email.style.borderColor = 'var(--errors)';
         lblEmail.style.color = 'var(--errors)';
-    }
-    else {
+        isValidateEmail = false;
+    } else {
         email.style.borderColor = '';
         lblEmail.style.color = 'var(--main-color)';
+        isValidateEmail = true;
     }
 }
 
-const invalidPassword = () => {
-    if (password.value === '') {
+let isValidatePassword = false;
+let validatePassword = () => {
+    let passwordCheck = password.value;
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if(passwordCheck === '' || !passwordPattern.test(passwordCheck)) {
         password.style.borderColor = 'var(--errors)';
         lblPassword.style.color = 'var(--errors)';
-    }
-    else {
+        pw_random.style.display = 'none';
+        isValidatePassword = false;
+    } else {
         password.style.borderColor = '';
         lblPassword.style.color = 'var(--main-color)';
-    }
-}
-
-const checkName = () => {
-    const nameValid = fullname.value;
-    const namePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
-    if(!namePattern.test(nameValid) && nameValid !== '') {
-        fullname.style.borderColor = 'var(--errors)';
-        lblName.style.color = 'var(--errors)';
-    }
-    else {
-        fullname.style.borderColor = '';
-        lblName.style.color = 'var(--main-color)';
-    }
-}
-
-const checkEmail = () => {
-    let emailcheck = email.value;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(!emailPattern.test(emailcheck) && emailcheck !== '') {
-        email.style.borderColor = 'var(--errors)';
-        lblEmail.style.color = 'var(--errors)';
-        isEmailValid = false;
-    }
-    else {
-        email.style.borderColor = '';
-        lblEmail.style.color = 'var(--main-color)';
-        isEmailValid = true;
+        isValidatePassword = true;
     }
 }
 
@@ -102,22 +90,6 @@ const getRandomPw = () => {
     pw_random.style.display = 'none';
 }
 
-const checkPassword = () => {
-    let passwordcheck = password.value;
-    const passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if(!passwordpattern.test(passwordcheck) && passwordcheck !== '') {
-        password.style.borderColor = 'var(--errors)';
-        lblPassword.style.color = 'var(--errors)';
-        pw_random.style.display = 'none';
-        isPasswordValid = false;
-    }
-    else {
-        password.style.borderColor = '';
-        lblPassword.style.color = 'var(--main-color)';
-        isPasswordValid = true;
-    }
-}
-
 const showPw = () => {
     if(openPw.checked == true) {
         password.type = 'text';
@@ -127,22 +99,27 @@ const showPw = () => {
     }
 }
 
+let buttonClicked = false;
 const login = () => {
     event.preventDefault();
-    if(email.value === '' || password.value === '') {
-        alertSMS.style.opacity = '1';
-        alertSMS.style.top = '20px';
-        setTimeout(() => {
-            alertSMS.style.top = '-10px';
-            alertSMS.style.opacity = '0'
-        }, 2000)
-        setTimeout(() => {
-            invalidEmail();
-            invalidPassword();
-        }, 10000)
-        return;
+
+    buttonClicked = true;
+    if(buttonClicked) {
+        email.addEventListener('keyup', validateEmail);
+        password.addEventListener('keyup', validatePassword);
     }
-    else {
+
+    if(email.value === '' || password.value === '' || !isValidateEmail || !isValidatePassword) {
+        alertSMS.classList.add('show');
+        setTimeout(() => {
+            alertSMS.classList.remove('show');
+        }, 3000)
+        setTimeout(() => {
+            validateEmail();
+            validatePassword();
+        }, 300)
+        return;
+    } else {
         loginBtn.classList.add('loading');
         loginBtn.disabled = true;
         email.disabled = true;
