@@ -21,6 +21,7 @@ let validateFullname = () => {
         fullname.style.borderColor = 'var(--errors)';
         lblName.style.color = 'var(--errors)';
         isValidateFullname = false;
+        return
     } else {
         fullname.style.borderColor = '';
         lblName.style.color = 'var(--main-color)';
@@ -37,6 +38,7 @@ let validateEmail = () => {
         email.style.borderColor = 'var(--errors)';
         lblEmail.style.color = 'var(--errors)';
         isValidateEmail = false;
+        return;
     } else {
         email.style.borderColor = '';
         lblEmail.style.color = 'var(--main-color)';
@@ -54,6 +56,7 @@ let validatePassword = () => {
         lblPassword.style.color = 'var(--errors)';
         pw_random.style.display = 'none';
         isValidatePassword = false;
+        return;
     } else {
         password.style.borderColor = '';
         lblPassword.style.color = 'var(--main-color)';
@@ -136,11 +139,24 @@ const login = () => {
 
 let register = () => {
     event.preventDefault();
-    if(fullname.value === '' || email.value === '' || password.value === '') {
-        alert("Please ensure all required fields are filled out correctly before register. Thank you!");
-        invalidName();
-        invalidEmail();
-        invalidPassword();
+
+    buttonClicked = true;
+    if(buttonClicked) {
+        fullname.addEventListener('keyup', validateFullname);
+        email.addEventListener('keyup', validateEmail);
+        password.addEventListener('keyup', validatePassword);
+    }
+
+    if(fullname.value === '' || email.value === '' || password.value === '' || !isValidateFullname || !isValidateEmail || !isValidatePassword) {
+        alertSMS.classList.add('show');
+        setTimeout(() => {
+            alertSMS.classList.remove('show');
+        }, 3000)
+        setTimeout(() => {
+            validateFullname();
+            validateEmail();
+            validatePassword();
+        }, 300)
         return;
     }
     else {
@@ -151,7 +167,7 @@ let register = () => {
             registerBtn.classList.remove('loading');
             registerBtn.disabled = false;
             location.href = 'verify.html';
-        }, 2000)
+        }, 1000)
     }
 }
 
