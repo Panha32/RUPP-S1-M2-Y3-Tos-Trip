@@ -69,11 +69,17 @@ let passwordSuggested = false;
 const generatePassword = () => {
     const length = 12;
     const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@$!%*?&';
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     let pwGenerated = '';
-    for(let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * charset.length);
-        pwGenerated += charset[randomIndex];
-    }
+    
+    do {
+        pwGenerated = '';
+        for(let i = 0; i < length; i++) {
+            const randomPw = Math.floor(Math.random() * charset.length);
+            pwGenerated += charset[randomPw];
+        }
+    } while(!passwordPattern.test(pwGenerated));
+
     return pwGenerated;
 }
 
@@ -81,9 +87,15 @@ password.addEventListener('focus', () => {
     if (!passwordSuggested && password.value === '') {
         const randomPw = generatePassword();
         pw_random.style.display = 'block';
-        pw_random.innerHTML = `Suggest password: ${randomPw}`;
+        pw_random.innerHTML = `Strong password: ${randomPw}`;
         sessionStorage.setItem('password', randomPw);
         passwordSuggested = true; 
+    }
+})
+
+document.addEventListener('click', (event) => {
+    if(!pw_random.contains(event.target) && !password.contains(event.target)) {
+        setTimeout(() => pw_random.style.display = 'none', 200);
     }
 })
 
@@ -162,10 +174,15 @@ let register = () => {
     else {
         registerBtn.classList.add('loading');
         registerBtn.disabled = true;
-
+        fullname.disabled = true;
+        email.disabled = true;
+        password.disabled = true;
         setTimeout(() => {
             registerBtn.classList.remove('loading');
             registerBtn.disabled = false;
+            fullname.disabled = false;
+            email.disabled = false;
+            password.disabled = false;
             location.href = 'verify.html';
         }, 1000)
     }
