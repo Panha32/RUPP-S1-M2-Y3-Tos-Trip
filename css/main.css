@@ -180,6 +180,10 @@ header .navbar .navbar-nav::-webkit-scrollbar {
     pointer-events: none;
     transition: all 0.3s ease;
 }
+.group .form-control::placeholder {
+    color: transparent;
+    transition: color 0.2s ease;
+}
 .group .form-control:focus + .form-label,
 .group .form-control:not(:placeholder-shown) + .form-label {
     top: 0;
@@ -190,10 +194,14 @@ header .navbar .navbar-nav::-webkit-scrollbar {
     background: var(--text-white);
     padding: 0 6px;
 }
-
 .group .form-control:disabled + .form-label,
 .group .form-control:disabled:not(:placeholder-shown) + .form-label {
     color: #aab0b6 !important;
+}
+.group .form-control:focus::placeholder,
+.group .form-control:not(:placeholder-shown)::placeholder {
+    color: #999; 
+    font-size: 13px !important;
 }
 /* ===== style for alertSMS ===== */
 .alertSMS {
