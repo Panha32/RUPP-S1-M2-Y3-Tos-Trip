@@ -11,7 +11,7 @@ function initDropdown(options) {
 
   // Set the default option as selected
   selectedOption.textContent = defaultOption;
-  button.classList.add("active"); // Add active class to style button
+  button.classList.add("active");
 
   options.forEach(option => {
     const item = document.createElement("div");
@@ -32,11 +32,7 @@ document.getElementById("dropdownButton").addEventListener("click", function() {
 
   // Toggle dropdown menu visibility
   dropdownMenu.classList.toggle("show");
-  
-  // Rotate icon
   icon.classList.toggle("rotate");
-
-  // Keep the current selection visible
 });
 
 // Select an option and animate button text
@@ -45,9 +41,9 @@ function selectOption(optionText) {
   const selectedOption = button.querySelector(".selected-option");
   const icon = button.querySelector("i");
 
-  selectedOption.textContent = optionText; // Update selected option text
-  button.classList.add("active"); // Ensure active class is added
-  document.getElementById("dropdownMenu").classList.remove("show"); // Close dropdown
+  selectedOption.textContent = optionText;
+  button.classList.add("active");
+  document.getElementById("dropdownMenu").classList.remove("show");
 
   // Reset icon rotation
   icon.classList.remove("rotate");
