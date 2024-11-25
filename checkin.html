@@ -161,33 +161,33 @@
                                 <div class="row g-3 p-4 pt-0 mt-1">
                                     <div class="col-6">
                                         <div class="group position-relative">
-                                            <input class="form-control" id="fName" type="text" placeholder="Enter first name" aria-label="">
+                                            <input class="form-control" id="fName" type="text" placeholder="Enter first name" autocomplete="new-password">
                                             <label for="fName" class="form-label position-absolute">First Name</label>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="group position-relative">
-                                            <input class="form-control" id="lName" type="text" placeholder="Enter last name" aria-label="">
+                                            <input class="form-control" id="lName" type="text" placeholder="Enter last name" autocomplete="new-password">
                                             <label for="lName" class="form-label position-absolute">Last Name</label>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="group position-relative mt-2">
-                                            <input class="form-control" id="email" type="text" placeholder="" aria-label="">
+                                            <input class="form-control" id="email" type="text" placeholder="" autocomplete="off">
                                             <label for="email" class="form-label position-absolute">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="row g-0 mt-2">
                                             <div class="col-3">
-                                                <button class="btn btn-country w-100 d-flex align-items-center justify-content-between">
+                                                <button disabled class="btn btn-country w-100 d-flex align-items-center justify-content-between">
                                                     <img src="img/check/khmerFlag.png" width="20px" alt="Khmer Flag">
                                                     +855 <i class="fa-solid fa-angle-down"></i>
                                                 </button>
                                             </div>
                                             <div class="col-9">
                                                 <div class="group position-relative">
-                                                    <input class="form-control" id="phoneNumber" type="text" placeholder="Enter phone number" aria-label="">
+                                                    <input class="form-control" id="phoneNumber" type="text" placeholder="Enter phone number" autocomplete="new-password">
                                                     <label for="phoneNumber" class="form-label position-absolute">Phone Number</label>
                                                 </div>
                                             </div>
@@ -245,31 +245,31 @@
                                         <div class="row g-3 p-4 pt-0 mt-1">
                                             <div class="col-12">
                                                 <div class="group position-relative mt-2">
-                                                    <input class="form-control" id="cardName" type="text" placeholder="Enter your card name" aria-label="">
+                                                    <input class="form-control" id="cardName" type="text" placeholder="Enter your card name" autocomplete="off">
                                                     <label for="cardName" class="form-label position-absolute">Name on Card</label>
                                                 </div>
                                             </div>
                                             <div class="col-8">
                                                 <div class="group position-relative mt-2">
-                                                    <input class="form-control" id="cardNumber" type="text" placeholder="Enter your card number" aria-label="">
+                                                    <input class="form-control" id="cardNumber" type="text" placeholder="Enter your card number" autocomplete="off">
                                                     <label for="cardNumber" class="form-label position-absolute">Debit/Credit Card Number</label>
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div class="group position-relative mt-2">
-                                                    <input class="form-control" id="expireDate" type="text" placeholder="MM/YY" aria-label="">
+                                                    <input class="form-control" id="expireDate" maxlength='5' type="text" onkeyup="formatString(event)" placeholder="MM/YY" autocomplete="off">
                                                     <label for="expireDate" class="form-label position-absolute">Expiration Date</label>
                                                 </div>
                                             </div>
                                             <div class="col-8">
                                                 <div class="group position-relative mt-2">
-                                                    <input class="form-control" id="securityCode" type="text" placeholder="Enter security code" aria-label="">
+                                                    <input class="form-control" id="securityCode" type="text" placeholder="Enter security code" autocomplete="new-password">
                                                     <label for="securityCode" class="form-label position-absolute">Security Code</label>
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div class="group position-relative mt-2">
-                                                    <input class="form-control" id="zipCode" type="text" placeholder="Enter zip code" aria-label="">
+                                                    <input class="form-control" id="zipCode" type="text" placeholder="Enter zip code" autocomplete="new-password">
                                                     <label for="zipCode" class="form-label position-absolute">Billing Zip Code</label>
                                                 </div>
                                             </div>
@@ -466,71 +466,8 @@
     <script src="plugin/flatpickr/flatpickr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/date.js"></script>
-    <script>
-        new WOW().init();
-
-        const form_control = 
-                        [
-                            document.getElementById('fName'), 
-                            document.getElementById('lName'), 
-                            document.getElementById('cardName'),
-                            document.getElementById('email'), 
-                            document.getElementById('phoneNumber'),
-                            document.getElementById('cardNumber'), 
-                            document.getElementById('securityCode'), 
-                            document.getElementById('expireDate'), 
-                            document.getElementById('zipCode')
-                        ];
-
-        form_control.forEach(input => {
-            input.addEventListener('input', function () {
-            if (input.value) {
-                input.style.borderColor = '#99c3f7'; 
-            } else {
-                input.style.borderColor = '';  
-            }
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const defaultValue = document.getElementById('email');
-            defaultValue.value = "panhacoderjs168@gmail.com";
-            defaultValue.style.borderColor = '#99c3f7';
-        });
-
-        const expireDate = flatpickr("#expireDate", {
-            dateFormat: "Y-m-d",
-            altInput: true,    
-            altFormat: "d M Y",          
-            minDate: "today"
-        });
-
-        let modalEl = document.getElementById('staticBackdrop');
-        let modalInstance = new bootstrap.Modal(modalEl);
-
-        let booking = () => {
-            let allInputFilled = true;
-
-            form_control.forEach(input => {
-                if(input.value.trim() === '') {
-                    input.style.borderColor = 'var(--errors)';
-                    allInputFilled = false;
-                }
-            })
-            if(!allInputFilled) {
-                alert("Please fill out all required fields to complete your booking!");
-                return;
-            }
-            modalInstance.show();
-        }
-
-        let closeBooking = () => {
-            modalInstance.hide();
-            setTimeout(goTo = () => {
-                location.href = 'mybooking.html';
-            }, 1000)
-        }
-    </script>
+    <script src="js/wow_script.js"></script>
+    <script src="js/checkin_script.js"></script>
+    
 </body>
 </html>

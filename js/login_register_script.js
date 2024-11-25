@@ -88,75 +88,56 @@ const showPw = () => {
 }
 
 let buttonClicked = false;
-const login = () => {
+
+const showAlert = () => {
+    alertSMS.classList.add('show');
+    setTimeout(() => {
+        alertSMS.classList.remove('show');
+    }, 3000);
+};
+
+const validateAllFields = (inputs, validators, validityRefs) => {
+    inputs.forEach((input, index) => validators[index]());
+    return validityRefs.every(ref => ref.value === true);
+};
+
+const toggleFormState = (inputs, button, disable) => {
+    inputs.forEach(input => (input.disabled = disable));
+    button.disabled = disable;
+    button.classList.toggle('loading', disable);
+};
+
+const handleSubmit = (inputs, validators, validityRefs, button, redirectUrl) => {
     event.preventDefault();
-
     buttonClicked = true;
-    if(buttonClicked) {
-        email.addEventListener('keyup', validateEmail);
-        password.addEventListener('keyup', validatePassword);
+
+    inputs.forEach((input, index) => {
+        input.addEventListener('keyup', validators[index]);
+    });
+
+    if (!validateAllFields(inputs, validators, validityRefs)) {
+        showAlert();
+        setTimeout(() => validateAllFields(inputs, validators, validityRefs), 300);
+        return;
     }
 
-    if(email.value === '' || password.value === '' || !isValidateEmail.value || !isValidatePassword.value) {
-        alertSMS.classList.add('show');
-        setTimeout(() => {
-            alertSMS.classList.remove('show');
-        }, 3000)
-        setTimeout(() => {
-            validateEmail();
-            validatePassword();
-        }, 300)
-        return;
-    } else {
-        loginBtn.classList.add('loading');
-        loginBtn.disabled = true;
-        email.disabled = true;
-        password.disabled = true;
-        setTimeout(() => {
-            loginBtn.classList.remove('loading');
-            loginBtn.disabled = false;
-            email.disabled = false;
-            password.disabled = false;
-            location.href = 'homepage.html';
-        }, 2000)
-    }
+    toggleFormState(inputs, button, true);
+    setTimeout(() => {
+        toggleFormState(inputs, button, false);
+        location.href = redirectUrl;
+    }, redirectUrl === 'homepage.html' ? 2000 : 1000);
 }
 
-let register = () => {
-    event.preventDefault();
+const login = () => {
+    const inputs = [email, password];
+    const validators = [validateEmail, validatePassword];
+    const validityRefs = [isValidateEmail, isValidatePassword];
+    handleSubmit(inputs, validators, validityRefs, loginBtn, 'homepage.html');
+}
 
-    buttonClicked = true;
-    if(buttonClicked) {
-        fullname.addEventListener('keyup', validateFullname);
-        email.addEventListener('keyup', validateEmail);
-        password.addEventListener('keyup', validatePassword);
-    }
-
-    if(fullname.value === '' || email.value === '' || password.value === '' || !isValidateFullname.value || !isValidateEmail.value || !isValidatePassword.value) {
-        alertSMS.classList.add('show');
-        setTimeout(() => {
-            alertSMS.classList.remove('show');
-        }, 3000)
-        setTimeout(() => {
-            validateFullname();
-            validateEmail();
-            validatePassword();
-        }, 300)
-        return;
-    }
-    else {
-        registerBtn.classList.add('loading');
-        registerBtn.disabled = true;
-        fullname.disabled = true;
-        email.disabled = true;
-        password.disabled = true;
-        setTimeout(() => {
-            registerBtn.classList.remove('loading');
-            registerBtn.disabled = false;
-            fullname.disabled = false;
-            email.disabled = false;
-            password.disabled = false;
-            location.href = 'verify.html';
-        }, 1000)
-    }
+const register = () => {
+    const inputs = [fullname, email, password];
+    const validators = [validateFullname, validateEmail, validatePassword];
+    const validityRefs = [isValidateFullname, isValidateEmail, isValidatePassword];
+    handleSubmit(inputs, validators, validityRefs, registerBtn, 'verify.html');
 }
