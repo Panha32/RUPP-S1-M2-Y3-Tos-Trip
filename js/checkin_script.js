@@ -44,6 +44,44 @@ function formatString(e) {
     );
 }
 
+function validCard(cardNumber) {
+    // Remove all non-num characters (e.g., spaces or hyphens)
+    const cleanedCardNumber = cardNumber.replace(/[^0-9]/g, '');
+
+    // Check if the input length is valid (most cards have between 13 and 19 nums)
+    if (cleanedCardNumber.length < 13 || cleanedCardNumber.length > 19) {
+        return false;
+    }
+
+    let sum = 0;
+    let shouldDouble = false;
+
+    // Loop through the card number nums, starting from the last num
+    for (let i = cleanedCardNumber.length - 1; i >= 0; i--) {
+        let num = parseInt(cleanedCardNumber[i], 10);
+
+        if (shouldDouble) {
+            num *= 2;
+            if (num > 9) {
+                num -= 9; // If the result is a two-num number, subtract 9
+            }
+        }
+
+        sum += num;
+        shouldDouble = !shouldDouble; // Toggle the doubling
+    }
+
+    // If the total sum is divisible by 10, it's a valid card number
+    return sum % 10 === 0;
+}
+
+// const n = '4539 1488 0343 6467';
+// if (validCard(n)) {
+//     console.log('Valid credit card number.');
+// } else {
+//     console.log('Invalid credit card number.');
+// }
+
 const form_control = [
     document.getElementById('fName'), 
     document.getElementById('lName'), 
@@ -72,7 +110,6 @@ const setFieldStyle = (inputElement, labelElement, isValid) => {
 const invalidFirstName = () => {
     setFieldStyle(fName, lblFname, false);
 };
-
 const validFirstName = () => {
     setFieldStyle(fName, lblFname, true);
 };
@@ -80,7 +117,6 @@ const validFirstName = () => {
 const invalidLastName = () => {
     setFieldStyle(lName, lblLname, false);
 };
-
 const validLastName = () => {
     setFieldStyle(lName, lblLname, true);
 };
@@ -88,7 +124,6 @@ const validLastName = () => {
 const invalidEmail = () => {
     setFieldStyle(email, lblEmail, false);
 };
-
 const validEmail = () => {
     setFieldStyle(email, lblEmail, true);
 };
@@ -99,19 +134,16 @@ const toggleFields = (fields, isDisabled) => {
         field.disabled = isDisabled;
     });
 };
-
 const updateLabelsOpacity = (labels, opacity) => {
     labels.forEach((label) => {
         label.style.opacity = opacity;
     });
 };
-
 const updateCursor = (elements, cursorStyle) => {
     elements.forEach((element) => {
         element.style.cursor = cursorStyle;
     });
 };
-
 const validateName = (inputElement, invalidFunction, validFunction) => {
     let inputElementValue = inputElement.value.trim();
     if (!inputElementValue || !namePattern.test(inputElementValue)) {
