@@ -94,18 +94,18 @@ const showAlert = () => {
     setTimeout(() => {
         alertSMS.classList.remove('show');
     }, 3000);
-};
+}
 
 const validateAllFields = (inputs, validators, validityRefs) => {
     inputs.forEach((input, index) => validators[index]());
     return validityRefs.every(ref => ref.value === true);
-};
+}
 
 const toggleFormState = (inputs, button, disable) => {
     inputs.forEach(input => (input.disabled = disable));
     button.disabled = disable;
     button.classList.toggle('loading', disable);
-};
+}
 
 const handleSubmit = (inputs, validators, validityRefs, button, redirectUrl) => {
     event.preventDefault();
@@ -127,6 +127,7 @@ const handleSubmit = (inputs, validators, validityRefs, button, redirectUrl) => 
         location.href = redirectUrl;
     }, redirectUrl === 'homepage.html' ? 2000 : 1000);
 }
+
 
 const login = () => {
     const inputs = [email, password];
