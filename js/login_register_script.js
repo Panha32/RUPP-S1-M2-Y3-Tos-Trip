@@ -12,56 +12,36 @@ let alertSMS = document.getElementById('alertSms');
 const loginBtn = document.getElementById('loginBtn');
 const registerBtn = document.getElementById('registerBtn');
 
-let isValidateFullname = false;
+let isValidateFullname = {value: false};
+let isValidateEmail = {value: false};
+let isValidatePassword = {value: false};
+
+const fullnamePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+const validateField = (input, label, pattern, isValidRef) => {
+    const value = input.value;
+    if(value === '' || !pattern.test(value)) {
+        input.style.borderColor = 'var(--errors)';
+        label.style.color = 'var(--errors)';
+        isValidRef.value = false;
+        return;
+    } else {
+        input.style.borderColor = '';
+        label.style.color = 'var(--main-color)';
+        isValidRef.value = true;
+    }
+}
+
 let validateFullname = () => {
-    let fullnameCheck = fullname.value;
-    const fullnamePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
-
-    if(fullnameCheck === '' || !fullnamePattern.test(fullnameCheck)) {
-        fullname.style.borderColor = 'var(--errors)';
-        lblName.style.color = 'var(--errors)';
-        isValidateFullname = false;
-        return
-    } else {
-        fullname.style.borderColor = '';
-        lblName.style.color = 'var(--main-color)';
-        isValidateFullname = true;
-    }
+    validateField(fullname, lblName, fullnamePattern, isValidateFullname);
 }
-
-let isValidateEmail = false;
 let validateEmail = () => {
-    let emailCheck = email.value;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if(emailCheck === '' || !emailPattern.test(emailCheck)) {
-        email.style.borderColor = 'var(--errors)';
-        lblEmail.style.color = 'var(--errors)';
-        isValidateEmail = false;
-        return;
-    } else {
-        email.style.borderColor = '';
-        lblEmail.style.color = 'var(--main-color)';
-        isValidateEmail = true;
-    }
+    validateField(email, lblEmail, emailPattern, isValidateEmail);
 }
-
-let isValidatePassword = false;
 let validatePassword = () => {
-    let passwordCheck = password.value;
-    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-    if(passwordCheck === '' || !passwordPattern.test(passwordCheck)) {
-        password.style.borderColor = 'var(--errors)';
-        lblPassword.style.color = 'var(--errors)';
-        pw_random.style.display = 'none';
-        isValidatePassword = false;
-        return;
-    } else {
-        password.style.borderColor = '';
-        lblPassword.style.color = 'var(--main-color)';
-        isValidatePassword = true;
-    }
+    validateField(password, lblPassword, passwordPattern, isValidatePassword);
 }
 
 let passwordSuggested = false;
@@ -115,76 +95,43 @@ const showPw = () => {
 }
 
 let buttonClicked = false;
+
+const handleFormSubmission = (inputs, validators, button, alertElement, redirectUrl, delay = 1000) => {
+    event.preventDefault();
+
+    buttonClicked = true;
+    if(buttonClicked) {
+        inputs.forEach((input, index) => {
+            input.addEventListener('keyup', validators[index]);
+        });
+    }
+
+    const allInputValid = inputs.every((input, index) => {
+        input.value !== '' && validators[index]()
+    });
+
+    if(!allInputValid) {
+        alertElement.classList.add('show');
+        setTimeout(() => alertElement.classList.remove('show'), 3000);
+        setTimeout(() => validators.forEach((validate) => validate()), 300);
+        return;
+    }
+
+    button.classList.add('loading');
+    button.disabled = true;
+    inputs.forEach(input => input.disabled = true);
+
+    setTimeout(() => {
+        button.classList.remove('loading');
+        button.disabled = false;
+        inputs.forEach(input => input.disabled = false);
+        location.href = redirectUrl;
+    }, delay);
+}
+
 const login = () => {
-    event.preventDefault();
-
-    buttonClicked = true;
-    if(buttonClicked) {
-        email.addEventListener('keyup', validateEmail);
-        password.addEventListener('keyup', validatePassword);
-    }
-
-    if(email.value === '' || password.value === '' || !isValidateEmail || !isValidatePassword) {
-        alertSMS.classList.add('show');
-        setTimeout(() => {
-            alertSMS.classList.remove('show');
-        }, 3000)
-        setTimeout(() => {
-            validateEmail();
-            validatePassword();
-        }, 300)
-        return;
-    } else {
-        loginBtn.classList.add('loading');
-        loginBtn.disabled = true;
-        email.disabled = true;
-        password.disabled = true;
-        setTimeout(() => {
-            loginBtn.classList.remove('loading');
-            loginBtn.disabled = false;
-            email.disabled = false;
-            password.disabled = false;
-            location.href = 'homepage.html';
-        }, 2000)
-    }
+    handleFormSubmission([email, password], [validateEmail, validatePassword], loginBtn, alertSMS, 'homepage.html', 2000);
 }
-
-let register = () => {
-    event.preventDefault();
-
-    buttonClicked = true;
-    if(buttonClicked) {
-        fullname.addEventListener('keyup', validateFullname);
-        email.addEventListener('keyup', validateEmail);
-        password.addEventListener('keyup', validatePassword);
-    }
-
-    if(fullname.value === '' || email.value === '' || password.value === '' || !isValidateFullname || !isValidateEmail || !isValidatePassword) {
-        alertSMS.classList.add('show');
-        setTimeout(() => {
-            alertSMS.classList.remove('show');
-        }, 3000)
-        setTimeout(() => {
-            validateFullname();
-            validateEmail();
-            validatePassword();
-        }, 300)
-        return;
-    }
-    else {
-        registerBtn.classList.add('loading');
-        registerBtn.disabled = true;
-        fullname.disabled = true;
-        email.disabled = true;
-        password.disabled = true;
-        setTimeout(() => {
-            registerBtn.classList.remove('loading');
-            registerBtn.disabled = false;
-            fullname.disabled = false;
-            email.disabled = false;
-            password.disabled = false;
-            location.href = 'verify.html';
-        }, 1000)
-    }
+const register = () => {
+    handleFormSubmission([fullname, email, password], [validateFullname, validateEmail, validatePassword], registerBtn, alertSMS, 'verify.html', 1000);
 }
-
