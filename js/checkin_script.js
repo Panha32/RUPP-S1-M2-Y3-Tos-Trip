@@ -75,12 +75,40 @@ function validCard(cardNumber) {
     return sum % 10 === 0;
 }
 
+function getIssuer(cardNumber) {
+    const cleanedCardNumber = cardNumber.replace(/[^0-9]/g, '');
+
+    // Check the length of the card number
+    if (cleanedCardNumber.length < 13 || cleanedCardNumber.length > 19) {
+        return 'Invalid card length';
+    }
+
+    // Determine the card issuer
+    if (/^4/.test(cleanedCardNumber)) {
+        return 'Visa';
+    } else if (/^5[1-5]/.test(cleanedCardNumber)) {
+        return 'MasterCard';
+    } else if (/^3[47]/.test(cleanedCardNumber)) {
+        return 'American Express';
+    } else if (/^6(?:011|5)/.test(cleanedCardNumber)) {
+        return 'Discover';
+    } else if (/^3(?:0[0-5]|[68])/.test(cleanedCardNumber)) {
+        return 'Diners Club';
+    } else if (/^35/.test(cleanedCardNumber)) {
+        return 'JCB';
+    } else {
+        return 'Unknown issuer';
+    }
+}
+
+// const num = '4111 1111 1111 1111';
 // const n = '4539 1488 0343 6467';
 // if (validCard(n)) {
 //     console.log('Valid credit card number.');
 // } else {
 //     console.log('Invalid credit card number.');
 // }
+// console.log(`The card issuer is: ${getIssuer(n)}`);
 
 const form_control = [
     document.getElementById('fName'), 
