@@ -21,7 +21,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 const validateField = (input, label, pattern, isValidRef) => {
-    const value = input.value;
+    const value = input.value; 
     if(value === '' || !pattern.test(value)) {
         input.style.borderColor = 'var(--errors)';
         label.style.color = 'var(--errors)';
@@ -45,11 +45,9 @@ let validatePassword = () => {
 }
 
 let passwordSuggested = false;
-
 const generatePassword = () => {
     const length = 12;
     const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@$!%*?&';
-    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     let pwGenerated = '';
     
     do {
@@ -86,52 +84,79 @@ const getRandomPw = () => {
 }
 
 const showPw = () => {
-    if(openPw.checked == true) {
-        password.type = 'text';
-    }
-    else {
-        password.type = 'password';
-    }
+    password.type = openPw.checked ? 'text' : 'password';
 }
 
 let buttonClicked = false;
-
-const handleFormSubmission = (inputs, validators, button, alertElement, redirectUrl, delay = 1000) => {
+const login = () => {
     event.preventDefault();
 
     buttonClicked = true;
     if(buttonClicked) {
-        inputs.forEach((input, index) => {
-            input.addEventListener('keyup', validators[index]);
-        });
+        email.addEventListener('keyup', validateEmail);
+        password.addEventListener('keyup', validatePassword);
     }
 
-    const allInputValid = inputs.every((input, index) => {
-        input.value !== '' && validators[index]()
-    });
+    if(email.value === '' || password.value === '' || !isValidateEmail.value || !isValidatePassword.value) {
+        alertSMS.classList.add('show');
+        setTimeout(() => {
+            alertSMS.classList.remove('show');
+        }, 3000)
+        setTimeout(() => {
+            validateEmail();
+            validatePassword();
+        }, 300)
+        return;
+    } else {
+        loginBtn.classList.add('loading');
+        loginBtn.disabled = true;
+        email.disabled = true;
+        password.disabled = true;
+        setTimeout(() => {
+            loginBtn.classList.remove('loading');
+            loginBtn.disabled = false;
+            email.disabled = false;
+            password.disabled = false;
+            location.href = 'homepage.html';
+        }, 2000)
+    }
+}
 
-    if(!allInputValid) {
-        alertElement.classList.add('show');
-        setTimeout(() => alertElement.classList.remove('show'), 3000);
-        setTimeout(() => validators.forEach((validate) => validate()), 300);
+let register = () => {
+    event.preventDefault();
+
+    buttonClicked = true;
+    if(buttonClicked) {
+        fullname.addEventListener('keyup', validateFullname);
+        email.addEventListener('keyup', validateEmail);
+        password.addEventListener('keyup', validatePassword);
+    }
+
+    if(fullname.value === '' || email.value === '' || password.value === '' || !isValidateFullname.value || !isValidateEmail.value || !isValidatePassword.value) {
+        alertSMS.classList.add('show');
+        setTimeout(() => {
+            alertSMS.classList.remove('show');
+        }, 3000)
+        setTimeout(() => {
+            validateFullname();
+            validateEmail();
+            validatePassword();
+        }, 300)
         return;
     }
-
-    button.classList.add('loading');
-    button.disabled = true;
-    inputs.forEach(input => input.disabled = true);
-
-    setTimeout(() => {
-        button.classList.remove('loading');
-        button.disabled = false;
-        inputs.forEach(input => input.disabled = false);
-        location.href = redirectUrl;
-    }, delay);
-}
-
-const login = () => {
-    handleFormSubmission([email, password], [validateEmail, validatePassword], loginBtn, alertSMS, 'homepage.html', 2000);
-}
-const register = () => {
-    handleFormSubmission([fullname, email, password], [validateFullname, validateEmail, validatePassword], registerBtn, alertSMS, 'verify.html', 1000);
+    else {
+        registerBtn.classList.add('loading');
+        registerBtn.disabled = true;
+        fullname.disabled = true;
+        email.disabled = true;
+        password.disabled = true;
+        setTimeout(() => {
+            registerBtn.classList.remove('loading');
+            registerBtn.disabled = false;
+            fullname.disabled = false;
+            email.disabled = false;
+            password.disabled = false;
+            location.href = 'verify.html';
+        }, 1000)
+    }
 }
