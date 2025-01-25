@@ -1,4 +1,4 @@
-# ToStrip
+# TosTrip
 
 ToStrip is a static web project designed for booking rooms or hotels for trips. This project focuses on showcasing a clean and functional frontend experience, with proper JavaScript validations implemented for form inputs. Although it currently lacks responsiveness, the navigation between pages works seamlessly, providing a smooth user experience.
 
